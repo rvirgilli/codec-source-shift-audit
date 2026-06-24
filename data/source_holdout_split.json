@@ -1,0 +1,427 @@
+{
+  "eligible_sources": [
+    "CLAMTTS",
+    "GPST",
+    "MASKGCT",
+    "NS2",
+    "NS3",
+    "SIMPLESPEECH1",
+    "SIMPLESPEECH2",
+    "UNIAUDIO",
+    "VALLE"
+  ],
+  "folds": [
+    {
+      "heldout_labels": {
+        "bonafide": 41,
+        "spoof": 78
+      },
+      "heldout_records": 119,
+      "heldout_source": "CLAMTTS",
+      "train_labels": {
+        "bonafide": 706,
+        "spoof": 730
+      },
+      "train_records": 1436,
+      "train_sources": [
+        "ELLAV",
+        "GPST",
+        "MASKGCT",
+        "NS2",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 119,
+        "spoof": 123
+      },
+      "validation_records": 242,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 10,
+        "spoof": 30
+      },
+      "heldout_records": 40,
+      "heldout_source": "GPST",
+      "train_labels": {
+        "bonafide": 732,
+        "spoof": 771
+      },
+      "train_records": 1503,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "MASKGCT",
+        "NS2",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 124,
+        "spoof": 130
+      },
+      "validation_records": 254,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 576,
+        "spoof": 576
+      },
+      "heldout_records": 1152,
+      "heldout_source": "MASKGCT",
+      "train_labels": {
+        "bonafide": 251,
+        "spoof": 307
+      },
+      "train_records": 558,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "GPST",
+        "NS2",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 39,
+        "spoof": 48
+      },
+      "validation_records": 87,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 23,
+        "spoof": 23
+      },
+      "heldout_records": 46,
+      "heldout_source": "NS2",
+      "train_labels": {
+        "bonafide": 721,
+        "spoof": 777
+      },
+      "train_records": 1498,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "GPST",
+        "MASKGCT",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 122,
+        "spoof": 131
+      },
+      "validation_records": 253,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 32,
+        "spoof": 32
+      },
+      "heldout_records": 64,
+      "heldout_source": "NS3",
+      "train_labels": {
+        "bonafide": 713,
+        "spoof": 769
+      },
+      "train_records": 1482,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "GPST",
+        "MASKGCT",
+        "NS2",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 121,
+        "spoof": 130
+      },
+      "validation_records": 251,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 34,
+        "spoof": 32
+      },
+      "heldout_records": 66,
+      "heldout_source": "SIMPLESPEECH1",
+      "train_labels": {
+        "bonafide": 712,
+        "spoof": 769
+      },
+      "train_records": 1481,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "GPST",
+        "MASKGCT",
+        "NS2",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 120,
+        "spoof": 130
+      },
+      "validation_records": 250,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 31,
+        "spoof": 31
+      },
+      "heldout_records": 62,
+      "heldout_source": "SIMPLESPEECH2",
+      "train_labels": {
+        "bonafide": 714,
+        "spoof": 770
+      },
+      "train_records": 1484,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "GPST",
+        "MASKGCT",
+        "NS2",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 121,
+        "spoof": 130
+      },
+      "validation_records": 251,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 11,
+        "spoof": 11
+      },
+      "heldout_records": 22,
+      "heldout_source": "UNIAUDIO",
+      "train_labels": {
+        "bonafide": 731,
+        "spoof": 787
+      },
+      "train_records": 1518,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "GPST",
+        "MASKGCT",
+        "NS2",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "USLM",
+        "VALLE",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 124,
+        "spoof": 133
+      },
+      "validation_records": 257,
+      "validation_sources": []
+    },
+    {
+      "heldout_labels": {
+        "bonafide": 53,
+        "spoof": 57
+      },
+      "heldout_records": 110,
+      "heldout_source": "VALLE",
+      "train_labels": {
+        "bonafide": 695,
+        "spoof": 748
+      },
+      "train_records": 1443,
+      "train_sources": [
+        "CLAMTTS",
+        "ELLAV",
+        "GPST",
+        "MASKGCT",
+        "NS2",
+        "NS3",
+        "RALLE",
+        "SIMPLESPEECH1",
+        "SIMPLESPEECH2",
+        "SINGLECODEC",
+        "SPEECHX",
+        "TACOLM",
+        "TI1G1R",
+        "UNIAUDIO",
+        "USLM",
+        "VIOLA"
+      ],
+      "validation_labels": {
+        "bonafide": 118,
+        "spoof": 126
+      },
+      "validation_records": 244,
+      "validation_sources": []
+    }
+  ],
+  "min_per_label": 10,
+  "protocol": "features/mimodf/wave0/codecfake_plus_protocol.jsonl",
+  "seed": 42,
+  "skipped_missing_audio": 0,
+  "source_labels": {
+    "CLAMTTS": {
+      "bonafide": 41,
+      "spoof": 78
+    },
+    "ELLAV": {
+      "bonafide": 8,
+      "spoof": 8
+    },
+    "GPST": {
+      "bonafide": 10,
+      "spoof": 30
+    },
+    "MASKGCT": {
+      "bonafide": 576,
+      "spoof": 576
+    },
+    "NS2": {
+      "bonafide": 23,
+      "spoof": 23
+    },
+    "NS3": {
+      "bonafide": 32,
+      "spoof": 32
+    },
+    "RALLE": {
+      "bonafide": 5,
+      "spoof": 5
+    },
+    "SIMPLESPEECH1": {
+      "bonafide": 34,
+      "spoof": 32
+    },
+    "SIMPLESPEECH2": {
+      "bonafide": 31,
+      "spoof": 31
+    },
+    "SINGLECODEC": {
+      "bonafide": 8,
+      "spoof": 14
+    },
+    "SPEECHX": {
+      "bonafide": 8,
+      "spoof": 8
+    },
+    "TACOLM": {
+      "bonafide": 8,
+      "spoof": 8
+    },
+    "TI1G1R": {
+      "bonafide": 6,
+      "spoof": 6
+    },
+    "UNIAUDIO": {
+      "bonafide": 11,
+      "spoof": 11
+    },
+    "USLM": {
+      "bonafide": 5,
+      "spoof": 5
+    },
+    "VALLE": {
+      "bonafide": 53,
+      "spoof": 57
+    },
+    "VIOLA": {
+      "bonafide": 7,
+      "spoof": 7
+    }
+  },
+  "subset": "CoSG",
+  "total_records": 1797,
+  "validation_fraction": 0.15,
+  "validation_policy": "stratified-row",
+  "validation_source_count": 1
+}

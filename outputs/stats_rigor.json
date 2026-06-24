@@ -1,0 +1,27 @@
+{
+  "non_mask_mean": {
+    "full": 0.909,
+    "mrd": 0.767
+  },
+  "A_hierarchical_ss2_drop": {
+    "xlsr": {
+      "delta": 0.2219,
+      "ci95": [
+        0.1563,
+        0.2869
+      ]
+    },
+    "wavlm": {
+      "delta": 0.1711,
+      "ci95": [
+        0.1048,
+        0.2369
+      ]
+    }
+  },
+  "B_paired_ss2_vs_ss1": {
+    "n_ss2_below_ss1": 5,
+    "n_seeds": 10,
+    "paired_mean": -0.013
+  }
+}
