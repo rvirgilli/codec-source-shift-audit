@@ -1,0 +1,4 @@
+fold,anchor,full,mrd,exact_proxy,recovers
+SIMPLESPEECH1,SQ-Codec,0.836,0.679,0.652,no
+SIMPLESPEECH2,SQ-Codec,0.888,0.666,0.691,no
+NS3,FACodec,0.941,0.779,0.942,yes
