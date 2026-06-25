@@ -22,6 +22,7 @@ per-utterance scores** — no raw audio, no model weights, and no training requi
 | Stats (B) — paired-by-seed SIMPLESPEECH2 vs. SIMPLESPEECH1 under MRD | `src/reproduce.py` |
 | Figure 1 — four-panel SS2 diagnostic trajectory | `src/figures.py` |
 | Figure 2 — label-wise score distributions (compression vs. displacement) | `src/figures.py` |
+| Table II — Exp 3 budget×composition decomposition (composition lever is codec-architecture-dependent) | `src/factorial_decompose.py` |
 
 ## Quickstart
 
@@ -29,6 +30,7 @@ per-utterance scores** — no raw audio, no model weights, and no training requi
 pip install -r requirements.txt
 python src/reproduce.py            # tables + statistics  (~15 s at default 2000 reps)
 python src/figures.py             # Figure 1 + Figure 2 -> outputs/*.pdf
+python src/factorial_decompose.py # Table II: Exp 3 budget-vs-composition decomposition
 ```
 
 Expected headline numbers (leak-free):
@@ -50,6 +52,7 @@ data/
   collision_details.csv                       SHA-256 train/test byte-identical pairs (leak audit)
   source_holdout_split.json                   the custom CoSG source-holdout split plan
   EXPORT_MANIFEST.json                        counts of the exported score files
+  factorial/<fold>/budget_<b>/<sampler>/seed_<s>.jsonl   Exp 3 budget×composition factorial (92 cells)
 src/
   audit_lib.py     loader + metrics (AUROC, EER, pAUC, stratified bootstrap, rank intervals)
   reproduce.py     regenerates Tables I & IV and statistics (A) and (B)
