@@ -102,6 +102,26 @@ def main():
         print(f"{name:20s}" + "".join(f"  {n:>2}{'T' if n >= MIN_BELOW else '-'}   " for n in counts))
     print("(verdicts are identical across ceilings 0.90-0.98: only CodecFake+ is testable)")
 
+    # second-instrument audit: testability is instrument-relative. Under the
+    # weaker frozen WavLM, ASVspoof5 becomes testable — and the audit returns
+    # the opposite verdict from CodecFake+ (budget-stable hardest fold),
+    # i.e., the gate discriminates instead of reporting artifacts everywhere.
+    print("\n== Second-instrument audit (frozen WavLM) ==")
+    for corpus in ("asvspoof2019la", "asvspoof5", "mlaad"):
+        full = cc.seed_mean_auroc(cc.load(corpus, "full", "wavlm_frozen_backend"), auroc)
+        mrd = cc.seed_mean_auroc(cc.load(corpus, "mrd", "wavlm_frozen_backend"), auroc)
+        if not full:
+            print(f"  {corpus:16s} (no wavlm data)"); continue
+        ref = cc.REFERENCE[corpus]
+        below = sorted(f for f, v in full.items() if v < CEIL)
+        common = [f for f in full if f in mrd]
+        hardest_full = min(full, key=full.get)
+        hardest_mrd = min(common, key=lambda f: mrd[f]) if common else None
+        print(f"  {corpus:16s} ref {ref} {full.get(ref, float('nan')):.3f}  "
+              f"below-ceiling {len(below)}/{len(full)}  testable {'yes' if len(below) >= MIN_BELOW else 'no'}  "
+              f"hardest full->{hardest_full} MRD->{hardest_mrd}"
+              f"{'  (STABLE)' if hardest_full == hardest_mrd else '  (changes)'}")
+
 
 if __name__ == "__main__":
     main()

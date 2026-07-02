@@ -27,6 +27,10 @@ def slice_auroc(it, source):
     return auroc(lab, sc)
 
 
+ALL_FOLDS = ["SIMPLESPEECH1", "SIMPLESPEECH2", "VALLE", "UNIAUDIO",
+             "NS2", "NS3", "CLAMTTS", "GPST", "MASKGCT"]
+
+
 def main():
     items = load(load_exclude())
     print("== CoRS proxy x SimpleSpeech-slice AUROC (seed means, pooled-CoSG scoring) ==")
@@ -43,6 +47,25 @@ def main():
         pooled = float(np.mean([auroc(it.labels, it.scores) for it in sets]))
         print(f"{proxy:22s}" + "".join(f"{c:>16.3f}" for c in cells) + f"{pooled:>10.3f}"
               + f"   ({len(sets)} seeds)")
+
+    # full fold x proxy matrix: verifies "multi-VQ generators are codec-recovered
+    # while both SimpleSpeech folds are not" (paper Sec. VII) from released data.
+    # recovery rule matches reproduce.py: best-proxy slice >= 0.95 x full-LOSO.
+    print("\n== Full fold x proxy slice matrix (seed means) ==")
+    from audit_lib import fold_mean_auroc
+    print(f"{'fold':14s}" + "".join(f"{p.replace('cors_', ''):>16}" for p in PROXIES)
+          + f"{'best':>8}{'full':>8}{'recovered':>10}")
+    for fold in ALL_FOLDS:
+        row = []
+        for proxy in PROXIES:
+            sets = [it for it in items if it.experiment == proxy]
+            vals = [v for it in sets if (v := slice_auroc(it, fold)) is not None]
+            row.append(float(np.mean(vals)) if vals else float("nan"))
+        best = np.nanmax(row) if row else float("nan")
+        full = fold_mean_auroc(items, "full_budget_loso", fold)
+        rec = "yes" if (full and best >= 0.95 * full) else "no"
+        print(f"{fold:14s}" + "".join(f"{c:>16.3f}" for c in row)
+              + f"{best:>8.3f}{full:>8.3f}{rec:>10}")
 
 
 if __name__ == "__main__":

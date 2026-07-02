@@ -1,7 +1,7 @@
 {
   "export": "wifs-2026-release-export-v2",
-  "score_files": 1350,
-  "records": 237441,
+  "score_files": 1470,
+  "records": 245376,
   "dropped_unsafe": 0,
   "groups": {
     "full_budget_loso": 90,
@@ -15,7 +15,7 @@
     "external_anchor": 1,
     "factorial": 174,
     "crosscorpus_asvspoof2019la": 170,
-    "crosscorpus_asvspoof5": 305,
+    "crosscorpus_asvspoof5": 425,
     "crosscorpus_mlaad": 325
   }
 }

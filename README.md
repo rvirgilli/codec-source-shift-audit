@@ -20,7 +20,8 @@ audio, no model weights, and no training required.
 | Paper artifact | Script |
 |---|---|
 | Table I + Fig. 1 — composition-aware recipe: naive (hash) vs source-balanced AUROC per fold @558, with paired CIs; cross-composition Kendall tau (with seed-bootstrap CI) and rank moves (Sec. IV–V) | `src/imbalance_rankdistort.py` |
-| Table II — ceiling-robust scoping across four corpora; below-ceiling-gated mean full→MRD collapse; the naive-tau metric trap on saturated ASVspoof2019-LA; ceiling sensitivity 0.90–0.98 (Sec. VI) | `src/ceiling_robust.py` |
+| Table II — ceiling-robust scoping across four corpora; below-ceiling-gated mean full→MRD collapse; the naive-tau metric trap on saturated ASVspoof2019-LA; ceiling sensitivity 0.90–0.98; second-instrument (frozen WavLM) audit (Sec. VI) | `src/ceiling_robust.py` |
+| Sec. VI — second-corpus composition test: ASVspoof5 under frozen WavLM (below-ceiling folds gain up to +0.129 with CIs excluding zero; ranking composition-stable, tau 0.86) | `src/asvspoof5_composition.py` |
 | Sec. IV — full vs MRD source-holdout AUROCs, CIs, vulnerability-rank intervals, both collapse-mean definitions; SS2 drop bootstrap; SS2-vs-SS1 seed-paired tie | `src/reproduce.py` |
 | Sec. V — budget-vs-composition decomposition (SS2/SS1/NS3 × budgets 558/1000/full) | `src/factorial_decompose.py` |
 | Sec. V — second-corpus recipe check on the MLAAD-en re-slice (TORTOISE et al.) | `src/mlaad_recipe.py` |
@@ -38,6 +39,7 @@ python src/imbalance_rankdistort.py # recipe table (paper Table I) + tau CIs
 python src/ceiling_robust.py        # paper Table II + metric trap + ceiling sweep
 python src/factorial_decompose.py   # budget-vs-composition decomposition
 python src/mlaad_recipe.py          # MLAAD-en recipe replication check
+python src/asvspoof5_composition.py # ASVspoof5/WavLM second-corpus composition test
 python src/proxy_coverage.py        # proxy x SimpleSpeech-slice coverage matrix
 python src/operating_point.py       # per-fold operating points + DET curves
 python src/external_check.py        # external-detector pooled EER
@@ -104,6 +106,8 @@ CodecFake+ `experiment` is one of: `full_budget_loso`, `budget_matched_loso` (MR
 - The factorial focus cells (SS2/SS1/NS3 × {558, 1000} × 3 samplers and SS2/NS3 full)
   carry seeds {7, 11, 17, 29, 31}; SIMPLESPEECH1 has no `budget_full` cell of its own —
   its full-budget reference is the 10-seed `full_budget_loso` experiment.
+- The ASVspoof5 wavlm_frozen_backend sampler blocks (A18-A25) carry seeds {7, 42, 99,
+  123, 2024}; xlsr sampler blocks likewise.
 - The MLAAD-en sampler blocks carry seeds {7, 42, 99, 123, 2024}; the TORTOISE
   hash/source-balanced cells carry 10 additional seeds (a pre-registered power
   extension for the only hard non-reference fold; all seeds are reported).
