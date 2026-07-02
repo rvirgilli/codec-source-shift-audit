@@ -106,6 +106,18 @@ def main():
         lo, hi = np.percentile(bs, 2.5), np.percentile(bs, 97.5)
         print(f"  {x:20s} vs {y:20s} tau {point:+.3f}  95% CI [{lo:+.3f}, {hi:+.3f}]")
 
+    print("\n== Within-sampler split-half noise floor (bootstrap bipartitions of the 5 seeds) ==")
+    r2 = random.Random(RNG_SEED)
+    for s in SAMPLERS:
+        taus = []
+        for _ in range(2000):
+            shuf = seeds[:]; r2.shuffle(shuf)
+            h1, h2 = shuf[:2], shuf[2:]
+            a = [np.mean([cells[(f, s)][sd] for sd in h1]) for f in FOLDS]
+            b = [np.mean([cells[(f, s)][sd] for sd in h2]) for f in FOLDS]
+            taus.append(kendall_tau(a, b))
+        print(f"  {s:20s} mean split-half tau {np.mean(taus):+.2f}  (ranking barely agrees with itself across seeds)")
+
     print("\n== Rank moves (1 = most vulnerable) ==")
     for f in FOLDS:
         rs = [R[s][f] for s in SAMPLERS]

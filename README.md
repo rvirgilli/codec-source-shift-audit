@@ -44,6 +44,7 @@ python src/proxy_coverage.py        # proxy x SimpleSpeech-slice coverage matrix
 python src/operating_point.py       # per-fold operating points + DET curves
 python src/external_check.py        # external-detector pooled EER
 python src/wavlm_displacement.py    # frozen-WavLM MASKGCT bona-fide displacement (d-prime)
+python src/retained_composition.py  # retained MASKGCT share per sampler (63/13/64)
 python src/figures.py               # figures -> outputs/*.pdf
 ```
 
@@ -94,6 +95,7 @@ src/
   operating_point.py     per-fold operating points + DET curves
   external_check.py      external-detector pooled EER
   wavlm_displacement.py  frozen-WavLM MASKGCT below-chance / d-prime diagnostic
+  retained_composition.py  retained dominant-source share per sampler (Sec. IV)
   figures.py             figures
 outputs/                 generated tables (CSV), DET points, figures (PDF)
 ```
@@ -111,11 +113,12 @@ CodecFake+ `experiment` is one of: `full_budget_loso`, `budget_matched_loso` (MR
   its full-budget reference is the 10-seed `full_budget_loso` experiment.
 - The ASVspoof5 wavlm_frozen_backend sampler blocks (A18-A25) carry seeds {7, 42, 99,
   123, 2024}; xlsr sampler blocks likewise.
-- The MLAAD-en sampler blocks carry seeds {7, 42, 99, 123, 2024}; the TORTOISE
-  hash/source-balanced cells carry 10 additional seeds (a pre-registered power
-  extension for the only hard non-reference fold; all seeds are reported). The
-  base-5 TORTOISE delta is +0.085 (CI includes zero); the 15-seed delta is
-  +0.109 [0.018, 0.203]. See `PREREGISTRATION.md` for the fixed-in-advance rule.
+- The MLAAD-en sampler blocks (hash and source-balanced) carry all 15 seeds
+  {7,42,99,123,2024,11,17,29,31,47,59,71,83,101,127} for every fold -- a uniform
+  pre-registered extension from the original 5 (not selective to one fold). The
+  TORTOISE base-5 delta is +0.085 (CI includes zero); the 15-seed delta is
+  +0.109 [0.018, 0.203]. See `PREREGISTRATION.md` for the fixed-in-advance rule,
+  committed to this repository before the extension runs.
 
 ## Provenance and leak-freeness
 
