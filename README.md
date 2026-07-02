@@ -1,8 +1,8 @@
 # Source-Shift Audit & Composition-Aware Recipe for Codec-Based Audio Deepfake Detection
 
 Reproduction code and per-utterance score files for the paper
-**"Source-Holdout Vulnerability Is a Composition Artifact: Ceiling-Robust Auditing and
-Composition-Aware Training for Codec-Based Audio Deepfake Detection."**
+**"Composition-Aware Training and Ceiling-Robust Evaluation for Source Shift in
+Codec-Based Audio Deepfake Detection."**
 
 This is an **evaluation-and-training** artifact, not a detector release. It regenerates
 every claim-bearing number in the paper **from saved per-utterance scores** — no raw
@@ -55,8 +55,8 @@ mean full->MRD collapse: below-ceiling-gated 0.146 | all-non-MASKGCT 0.142
 SIMPLESPEECH2:          full 0.888 (rank 4/9)  ->  MRD 0.666 (rank 1)   delta 0.222
   hierarchical seed+utterance bootstrap of the drop: 95% CI [0.1563, 0.2869] (excludes 0)
   paired vs SIMPLESPEECH1: SS2 below SS1 in exactly 5/10 seeds (mean delta -0.013) -> tie
-proxy coverage (SS2 slice): FACodec 0.719 > SQ-Codec 0.691; Spectral Codecs SS1 0.096 / SS2 0.449
-external LA-trained wav2vec2/AASIST on CoSG: pooled EER 28.9%
+proxy coverage: FACodec 0.719 > SQ-Codec 0.691 (SS2 slice); Spectral Codecs SS1 0.100 / SS2 0.451
+external LA-trained wav2vec2/AASIST on CoSG: pooled EER 27.8% (leak-free rows)
 ```
 
 ## Contents
@@ -77,6 +77,8 @@ data/
   source_holdout_split.json                   the custom CoSG source-holdout split plan
   EXPORT_MANIFEST.json                        counts of the exported score files
 src/
+  recipe_sampler.py       reference implementation of the hash / source-balanced /
+                          source-proportional samplers (the training recipe)
   audit_lib.py           loader + metrics (AUROC, EER, pAUC, bootstrap, rank intervals)
   crosscorpus_lib.py     loader for the cross-corpus re-slices
   reproduce.py           source-holdout tables + statistics
@@ -98,6 +100,7 @@ CodecFake+ `experiment` is one of: `full_budget_loso`, `budget_matched_loso` (MR
 
 ### Seed coverage notes (no silent exclusions)
 
+- The MRD regime is 558 train (251 bona-fide) / 87 validation utterances.
 - The factorial focus cells (SS2/SS1/NS3 × {558, 1000} × 3 samplers and SS2/NS3 full)
   carry seeds {7, 11, 17, 29, 31}; SIMPLESPEECH1 has no `budget_full` cell of its own —
   its full-budget reference is the 10-seed `full_budget_loso` experiment.
