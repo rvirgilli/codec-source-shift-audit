@@ -1,5 +1,5 @@
 """External-detector check (paper Sec. IV): inference-only ASVspoof2019-LA-trained
-wav2vec2/AASIST scored on the same leak-free CoSG rows -> pooled EER ~28.9%.
+wav2vec2/AASIST scored on the same leak-free CoSG rows -> pooled EER 27.8%.
 
 Confirms the CoSG difficulty is real and not specific to the paper's instruments.
 Reads data/external_anchor/scores.jsonl (sanitized per-utterance scores).

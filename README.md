@@ -43,6 +43,7 @@ python src/asvspoof5_composition.py # ASVspoof5/WavLM second-corpus composition 
 python src/proxy_coverage.py        # proxy x SimpleSpeech-slice coverage matrix
 python src/operating_point.py       # per-fold operating points + DET curves
 python src/external_check.py        # external-detector pooled EER
+python src/wavlm_displacement.py    # frozen-WavLM MASKGCT bona-fide displacement (d-prime)
 python src/figures.py               # figures -> outputs/*.pdf
 ```
 
@@ -92,6 +93,7 @@ src/
   proxy_coverage.py      proxy x slice coverage matrix
   operating_point.py     per-fold operating points + DET curves
   external_check.py      external-detector pooled EER
+  wavlm_displacement.py  frozen-WavLM MASKGCT below-chance / d-prime diagnostic
   figures.py             figures
 outputs/                 generated tables (CSV), DET points, figures (PDF)
 ```
@@ -111,7 +113,9 @@ CodecFake+ `experiment` is one of: `full_budget_loso`, `budget_matched_loso` (MR
   123, 2024}; xlsr sampler blocks likewise.
 - The MLAAD-en sampler blocks carry seeds {7, 42, 99, 123, 2024}; the TORTOISE
   hash/source-balanced cells carry 10 additional seeds (a pre-registered power
-  extension for the only hard non-reference fold; all seeds are reported).
+  extension for the only hard non-reference fold; all seeds are reported). The
+  base-5 TORTOISE delta is +0.085 (CI includes zero); the 15-seed delta is
+  +0.109 [0.018, 0.203]. See `PREREGISTRATION.md` for the fixed-in-advance rule.
 
 ## Provenance and leak-freeness
 
