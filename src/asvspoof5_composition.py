@@ -83,10 +83,20 @@ def main():
               f"{'[' + format(lo, '.3f') + ', ' + format(hi, '.3f') + ']':>17} {n:>3}{flag}{ex}")
 
     print("\n== Cross-composition agreement / hardest fold ==")
+    import random
+    seeds = sorted(set.intersection(*[set(cells[s][f]) for s in SAMPLERS for f in folds]))
+    r = random.Random(7)
     for x, y in itertools.combinations(SAMPLERS, 2):
         common = [f for f in folds if not np.isnan(M[x][f]) and not np.isnan(M[y][f])]
         t = kendall_tau([M[x][f] for f in common], [M[y][f] for f in common])
-        print(f"  tau({x} vs {y}) = {t:+.3f}  ({len(common)} folds)")
+        bs = []
+        for _ in range(2000):
+            draw = [seeds[r.randrange(len(seeds))] for _ in seeds]
+            av = [np.mean([cells[x][f][sd] for sd in draw]) for f in common]
+            bv = [np.mean([cells[y][f][sd] for sd in draw]) for f in common]
+            bs.append(kendall_tau(av, bv))
+        lo, hi = np.percentile(bs, 2.5), np.percentile(bs, 97.5)
+        print(f"  tau({x} vs {y}) = {t:+.3f}  95% CI [{lo:+.3f}, {hi:+.3f}]  ({len(common)} folds)")
     for s in SAMPLERS:
         valid = {f: v for f, v in M[s].items() if not np.isnan(v)}
         if valid:

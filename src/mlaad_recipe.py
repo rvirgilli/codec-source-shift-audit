@@ -45,6 +45,14 @@ def main():
     print("== MLAAD-en recipe check: hash vs source-balanced @ fixed MRD budget ==")
     print("   (hierarchical seed+utterance bootstrap CIs; Bonferroni family m=9)")
     print(f"{'fold':14s} {'full':>6} {'hash':>6} {'bal':>6} {'delta':>7} {'95% CI':>18} {'n':>3}")
+    # TORTOISE: extension-only seeds (the 10 added after the base-5 result), untainted by any stopping decision
+    base5 = {7, 42, 99, 123, 2024}
+    a = cc.load("mlaad", "samp_hash", "xlsr_peft_adapter", with_utts=True)["TORTOISE"]
+    b = cc.load("mlaad", "samp_source-balanced", "xlsr_peft_adapter", with_utts=True)["TORTOISE"]
+    ea = {s: v for s, v in a.items() if s not in base5}
+    eb = {s: v for s, v in b.items() if s not in base5}
+    pt, (lo, hi), _ = hierarchical_paired_delta(ea, eb)
+    print(f"  [TORTOISE extension-only 10 seeds: {pt:+.3f} [{lo:.3f}, {hi:.3f}] -- untainted by the base-5 peek]")
     for fold in sorted(hash_):
         h, b = hash_[fold], bal.get(fold, {})
         res = hier_ci("mlaad", fold)

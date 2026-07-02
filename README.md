@@ -15,7 +15,7 @@ audio, no model weights, and no training required.
 > re-slices with a matched imbalance profile, not official protocols. Nothing here is a
 > detector or SOTA claim.
 
-## What it reproduces (v8 paper mapping)
+## What it reproduces (v9 paper mapping)
 
 | Paper artifact | Script |
 |---|---|
