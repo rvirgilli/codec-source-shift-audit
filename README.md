@@ -120,6 +120,15 @@ CodecFake+ `experiment` is one of: `full_budget_loso`, `budget_matched_loso` (MR
   +0.109 [0.018, 0.203]. See `PREREGISTRATION.md` for the fixed-in-advance rule,
   committed to this repository before the extension runs.
 
+### Note on the `mrd` and `samp_hash` blocks
+
+For the cross-corpus re-slices, the `mrd` block and the `samp_hash` sampler block
+are the *same nominal condition* (hash subsampling at the MRD budget) but were run
+as **separate training jobs**, so their per-seed scores differ (independent random
+draws); only their seed-means are comparable (e.g. MLAAD TORTOISE: 0.790 vs 0.771).
+The paper's recipe analysis uses `samp_hash` throughout; `mrd` is used only for the
+full->MRD collapse. Do not pair the two blocks seed-by-seed.
+
 ## Provenance and leak-freeness
 
 All primary CodecFake+ numbers exclude every test record byte-identical (SHA-256) to a
