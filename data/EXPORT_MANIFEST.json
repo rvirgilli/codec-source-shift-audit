@@ -1,14 +1,21 @@
 {
-  "score_files": 370,
-  "records": 98110,
+  "export": "wifs-2026-release-export-v2",
+  "score_files": 1350,
+  "records": 237441,
   "dropped_unsafe": 0,
-  "experiments": {
+  "groups": {
     "full_budget_loso": 90,
     "budget_matched_loso": 80,
     "cors_vocos": 10,
     "cors_facodec": 10,
     "cors_sqcodec": 10,
     "wavlm_frozen_loso": 90,
-    "wavlm_budget_matched_loso": 80
+    "wavlm_budget_matched_loso": 80,
+    "cors_spectralcodecs": 5,
+    "external_anchor": 1,
+    "factorial": 174,
+    "crosscorpus_asvspoof2019la": 170,
+    "crosscorpus_asvspoof5": 305,
+    "crosscorpus_mlaad": 325
   }
 }

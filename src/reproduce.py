@@ -2,9 +2,9 @@
 """Reproduce the paper's claim-bearing numbers from the bundled per-utterance scores.
 
 Regenerates:
-  - Table I  : full-budget vs Matched Remaining-Data (MRD) source-holdout AUROCs,
+  - Sec. IV  : full-budget vs Matched Remaining-Data (MRD) source-holdout AUROCs,
                95% CIs, and bootstrap vulnerability-rank intervals; non-MASKGCT means.
-  - Table IV : exact-codec proxy recovery (SimpleSpeech->SQ-Codec, NaturalSpeech3->FACodec).
+  - Sec. VII : exact-codec proxy recovery (SimpleSpeech->SQ-Codec, NaturalSpeech3->FACodec).
   - Stats (A): hierarchical seed+utterance bootstrap of the SS2 full->MRD AUROC drop.
   - Stats (B): paired-by-seed SIMPLESPEECH2 vs SIMPLESPEECH1 under MRD.
 
@@ -112,15 +112,24 @@ def main() -> int:
     nm_full = np.mean([r["auroc_full"] for r in rows if r["fold"] != "MASKGCT" and r["auroc_full"]])
     nm_mrd = np.mean([r["auroc_mrd"] for r in rows if r["fold"] != "MASKGCT" and r["auroc_mrd"]])
 
-    print("== Table I: source-holdout AUROC (leak-free) ==")
+    print("== Source-holdout AUROC, full vs MRD (leak-free; paper Sec. IV) ==")
     print(f"{'fold':14} {'full':>6} {'CI_full':>13} {'MRD':>6} {'CI_mrd':>13} {'delta':>6} {'rank_full':>11} {'rank_mrd':>11}")
     for r in rows:
         print(f"{r['fold']:14} {str(r['auroc_full']):>6} {str(r['ci_full']):>13} {str(r['auroc_mrd']):>6} "
               f"{str(r['ci_mrd']):>13} {str(r['delta']):>6} {str(r['rank_full']):>11} {str(r['rank_mrd']):>11}")
-    print(f"non-MASKGCT mean: full {nm_full:.3f}  MRD {nm_mrd:.3f}\n")
+    print(f"non-MASKGCT mean: full {nm_full:.3f}  MRD {nm_mrd:.3f}")
+    # Two collapse definitions (the paper's Sec. IV number is the gated one):
+    #   gated  = mean over below-ceiling (full AUROC < 0.95) non-reference folds
+    #   all    = mean over all 8 non-MASKGCT folds (includes NS2, above ceiling)
+    deltas_all = [r["delta"] for r in rows if r["fold"] != "MASKGCT" and r["delta"] is not None]
+    deltas_gated = [r["delta"] for r in rows
+                    if r["fold"] != "MASKGCT" and r["delta"] is not None and r["auroc_full"] < 0.95]
+    print(f"mean full->MRD collapse: below-ceiling-gated {np.mean(deltas_gated):.3f} "
+          f"({len(deltas_gated)} folds; paper Sec. IV)  |  all-non-MASKGCT {np.mean(deltas_all):.3f} "
+          f"({len(deltas_all)} folds)\n")
 
     # ---- Table IV: exact-codec proxy recovery ----
-    print("== Table IV: exact-codec proxy recovery ==")
+    print("== Exact-codec proxy recovery (paper Sec. VII) ==")
     print(f"{'fold':14} {'codec':9} {'full':>6} {'MRD':>6} {'exact_proxy':>11} {'recovers':>8}")
     t4 = []
     for fold, anchor in EXACT.items():

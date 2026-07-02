@@ -137,8 +137,60 @@ def fig2(items):
     print("wrote outputs/fig_labelwise_distributions.pdf")
 
 
+def fig_recipe():
+    """Paper Fig. 1: naive (hash) vs source-balanced sampler @558, all 8 folds."""
+    import json
+    excl = A.load_exclude()
+    tree = A.ROOT / "data" / "factorial"
+    folds = ["SIMPLESPEECH2", "SIMPLESPEECH1", "VALLE", "UNIAUDIO",
+             "NS2", "CLAMTTS", "GPST", "NS3"]
+    scq = {"SIMPLESPEECH1", "SIMPLESPEECH2"}
+
+    def mean_auroc(fold, samp):
+        vals = []
+        for f in sorted((tree / fold / "budget_558" / samp).glob("seed_*.jsonl")):
+            lab, sc = [], []
+            for ln in f.open():
+                o = json.loads(ln)
+                if str(o.get("utterance_id", "")) in excl:
+                    continue
+                lab.append(1 if o.get("label") == "spoof" else 0)
+                sc.append(float(o["score"]))
+            if sum(lab) and len(lab) - sum(lab):
+                vals.append(A.auroc(np.asarray(lab), np.asarray(sc)))
+        return float(np.mean(vals))
+
+    naive = [mean_auroc(f, "hash") for f in folds]
+    bal = [mean_auroc(f, "source-balanced") for f in folds]
+    x = np.arange(len(folds))
+    fig, ax = plt.subplots(figsize=(7.6, 2.6))
+    ax.grid(axis="y", color="0.9", linewidth=0.6, zorder=0)
+    ax.bar(x - 0.19, naive, 0.36, label="naive (hash)", color="0.72",
+           edgecolor="white", linewidth=0.5, zorder=2)
+    ax.bar(x + 0.19, bal, 0.36, label="source-balanced (recipe)", color="#1f77b4",
+           edgecolor="white", linewidth=0.5, zorder=2)
+    for i, f in enumerate(folds):
+        if f in scq:
+            ax.text(i, max(naive[i], bal[i]) + 0.012, "Scq", ha="center",
+                    fontsize=7, color="crimson", fontweight="bold", zorder=3)
+    ax.set_xticks(x)
+    ax.set_xticklabels(["SS2", "SS1", "VALLE", "UNIAUDIO", "NS2", "CLAMTTS", "GPST", "NS3"],
+                       fontsize=8)
+    ax.set_ylim(0.5, 1.0)
+    ax.set_yticks(np.arange(0.5, 1.01, 0.1))
+    ax.set_ylabel("held-out AUROC (0.5 = chance)", fontsize=8)
+    ax.set_title("Composition-aware recipe at fixed 558 budget", fontsize=9)
+    ax.spines[["top", "right"]].set_visible(False)
+    # bars rise to <= 0.89, so the upper-right corner is the only mark-free zone
+    ax.legend(fontsize=7, loc="upper right", ncols=2, framealpha=1.0,
+              edgecolor="0.8", borderaxespad=0.4)
+    fig.savefig(OUT / "fig_recipe.pdf", bbox_inches="tight")
+    print("wrote outputs/fig_recipe.pdf")
+
+
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
     it = A.load(exclude=A.load_exclude())
     fig1(it)
     fig2(it)
+    fig_recipe()

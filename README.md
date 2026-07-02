@@ -1,46 +1,62 @@
-# Source-Shift Attribution Audit for Codec-Based Audio Deepfake Detection
+# Source-Shift Audit & Composition-Aware Recipe for Codec-Based Audio Deepfake Detection
 
 Reproduction code and per-utterance score files for the paper
-**"Decomposing Source-Shift Failure in Codec-Based Audio Deepfake Detection."**
+**"Source-Holdout Vulnerability Is a Composition Artifact: Ceiling-Robust Auditing and
+Composition-Aware Training for Codec-Based Audio Deepfake Detection."**
 
-This is a **diagnostic / evaluation** artifact, not a detector release. It lets you
-regenerate every claim-bearing number and figure in the paper **from saved
-per-utterance scores** — no raw audio, no model weights, and no training required.
+This is an **evaluation-and-training** artifact, not a detector release. It regenerates
+every claim-bearing number in the paper **from saved per-utterance scores** — no raw
+audio, no model weights, and no training required.
 
-> **Scope caveat.** The evaluation uses a *custom* leave-one-source-out (LOSO) split
-> over the CodecFake+ codec-generated-speech (CoSG) partition as a **diagnostic
-> source-holdout protocol**. It is **not** the official CodecFake+ benchmark, and the
-> numbers here are evaluation-attribution diagnostics, not a detector or SOTA claim.
+> **Scope caveat.** The primary evaluation uses a *custom* leave-one-source-out (LOSO)
+> split over the CodecFake+ codec-generated-speech (CoSG) partition as a **diagnostic
+> source-holdout protocol** — **not** the official CodecFake+ benchmark. The three
+> control corpora (ASVspoof2019-LA, ASVspoof5, MLAAD-en) are likewise custom diagnostic
+> re-slices with a matched imbalance profile, not official protocols. Nothing here is a
+> detector or SOTA claim.
 
-## What it reproduces
+## What it reproduces (v8 paper mapping)
 
-| Artifact | Script |
+| Paper artifact | Script |
 |---|---|
-| Table I — full-budget vs. Matched Remaining-Data (MRD) source-holdout AUROCs, CIs, vulnerability-rank intervals; non-MASKGCT means | `src/reproduce.py` |
-| Table IV — exact-codec proxy recovery (SimpleSpeech→SQ-Codec, NaturalSpeech3→FACodec) | `src/reproduce.py` |
-| Stats (A) — hierarchical seed+utterance bootstrap of the SIMPLESPEECH2 full→MRD AUROC drop | `src/reproduce.py` |
-| Stats (B) — paired-by-seed SIMPLESPEECH2 vs. SIMPLESPEECH1 under MRD | `src/reproduce.py` |
-| Figure 1 — four-panel SS2 diagnostic trajectory | `src/figures.py` |
-| Figure 2 — label-wise score distributions (compression vs. displacement) | `src/figures.py` |
-| Table II — Exp 3 budget×composition decomposition (composition lever is codec-architecture-dependent) | `src/factorial_decompose.py` |
+| Table I + Fig. 1 — composition-aware recipe: naive (hash) vs source-balanced AUROC per fold @558, with paired CIs; cross-composition Kendall tau (with seed-bootstrap CI) and rank moves (Sec. IV–V) | `src/imbalance_rankdistort.py` |
+| Table II — ceiling-robust scoping across four corpora; below-ceiling-gated mean full→MRD collapse; the naive-tau metric trap on saturated ASVspoof2019-LA; ceiling sensitivity 0.90–0.98 (Sec. VI) | `src/ceiling_robust.py` |
+| Sec. IV — full vs MRD source-holdout AUROCs, CIs, vulnerability-rank intervals, both collapse-mean definitions; SS2 drop bootstrap; SS2-vs-SS1 seed-paired tie | `src/reproduce.py` |
+| Sec. V — budget-vs-composition decomposition (SS2/SS1/NS3 × budgets 558/1000/full) | `src/factorial_decompose.py` |
+| Sec. V — second-corpus recipe check on the MLAAD-en re-slice (TORTOISE et al.) | `src/mlaad_recipe.py` |
+| Sec. VII — proxy-codec coverage matrix incl. the second scalar quantizer (Spectral Codecs) | `src/proxy_coverage.py` |
+| Sec. VII — operating-point transfer per fold + DET curves (oracle vs transferred threshold) | `src/operating_point.py` |
+| Sec. IV — external LA-trained wav2vec2/AASIST check (pooled EER on CoSG) | `src/external_check.py` |
+| Score-distribution figures (compression vs displacement) | `src/figures.py` |
 
 ## Quickstart
 
 ```bash
 pip install -r requirements.txt
-python src/reproduce.py            # tables + statistics  (~15 s at default 2000 reps)
-python src/figures.py             # Figure 1 + Figure 2 -> outputs/*.pdf
-python src/factorial_decompose.py # Table II: Exp 3 budget-vs-composition decomposition
+python src/reproduce.py             # source-holdout tables + statistics (~15 s)
+python src/imbalance_rankdistort.py # recipe table (paper Table I) + tau CIs
+python src/ceiling_robust.py        # paper Table II + metric trap + ceiling sweep
+python src/factorial_decompose.py   # budget-vs-composition decomposition
+python src/mlaad_recipe.py          # MLAAD-en recipe replication check
+python src/proxy_coverage.py        # proxy x SimpleSpeech-slice coverage matrix
+python src/operating_point.py       # per-fold operating points + DET curves
+python src/external_check.py        # external-detector pooled EER
+python src/figures.py               # figures -> outputs/*.pdf
 ```
 
-Expected headline numbers (leak-free):
+Expected headline numbers (leak-free, deterministic at the default 2000 reps):
 
 ```
+recipe @558:            SIMPLESPEECH2 0.673 -> 0.881 (+0.208 [0.135, 0.287])
+                        SIMPLESPEECH1 0.594 -> 0.752 (+0.157 [0.072, 0.275])
+                        NS3           0.805 -> 0.756 (-0.049, n.s.)
 non-MASKGCT mean AUROC: full 0.909  ->  MRD 0.767
+mean full->MRD collapse: below-ceiling-gated 0.146 | all-non-MASKGCT 0.142
 SIMPLESPEECH2:          full 0.888 (rank 4/9)  ->  MRD 0.666 (rank 1)   delta 0.222
-  hierarchical seed+utterance bootstrap of the drop: 95% CI [0.155, 0.291]  (excludes 0)
-  paired vs SIMPLESPEECH1: SS2 below SS1 in exactly 5/10 seeds (mean delta -0.013)  -> a statistical tie
-exact-codec proxy recovery:  SS2 (SQ-Codec) 0.691 -> no ;  NS3 (FACodec) 0.942 -> yes
+  hierarchical seed+utterance bootstrap of the drop: 95% CI [0.1563, 0.2869] (excludes 0)
+  paired vs SIMPLESPEECH1: SS2 below SS1 in exactly 5/10 seeds (mean delta -0.013) -> tie
+proxy coverage (SS2 slice): FACodec 0.719 > SQ-Codec 0.691; Spectral Codecs SS1 0.096 / SS2 0.449
+external LA-trained wav2vec2/AASIST on CoSG: pooled EER 28.9%
 ```
 
 ## Contents
@@ -49,38 +65,65 @@ exact-codec proxy recovery:  SS2 (SQ-Codec) 0.691 -> no ;  NS3 (FACodec) 0.942 -
 data/
   scores/<experiment>/seed_<n>/<fold>.jsonl   sanitized per-utterance scores:
                                               {utterance_id, label, source_model, score}
-  collision_details.csv                       SHA-256 train/test byte-identical pairs (leak audit)
+  factorial/<fold>/budget_<b>/<sampler>/seed_<s>.jsonl
+                                              budget x composition factorial: all 8
+                                              non-MASKGCT folds @558; SS2/SS1/NS3 also
+                                              @1000 and (SS2/NS3) full
+  crosscorpus/<corpus>/<block>/<condition>/seed_<n>/<fold>.jsonl
+                                              ASVspoof2019-LA / ASVspoof5 / MLAAD-en
+                                              re-slices (full, mrd, samp_* blocks)
+  external_anchor/scores.jsonl                inference-only LA-trained wav2vec2/AASIST
+  collision_details.csv                       SHA-256 train/test byte-identical pairs
   source_holdout_split.json                   the custom CoSG source-holdout split plan
   EXPORT_MANIFEST.json                        counts of the exported score files
-  factorial/<fold>/budget_<b>/<sampler>/seed_<s>.jsonl   Exp 3 budget×composition factorial (92 cells)
 src/
-  audit_lib.py     loader + metrics (AUROC, EER, pAUC, stratified bootstrap, rank intervals)
-  reproduce.py     regenerates Tables I & IV and statistics (A) and (B)
-  figures.py       regenerates Figure 1 and Figure 2
-outputs/           generated tables (CSV) and figures (PDF)
+  audit_lib.py           loader + metrics (AUROC, EER, pAUC, bootstrap, rank intervals)
+  crosscorpus_lib.py     loader for the cross-corpus re-slices
+  reproduce.py           source-holdout tables + statistics
+  imbalance_rankdistort.py  recipe table + composition ranking distortion
+  ceiling_robust.py      multi-corpus scoping + metric trap + ceiling sensitivity
+  factorial_decompose.py budget-vs-composition decomposition
+  mlaad_recipe.py        MLAAD-en recipe replication
+  proxy_coverage.py      proxy x slice coverage matrix
+  operating_point.py     per-fold operating points + DET curves
+  external_check.py      external-detector pooled EER
+  figures.py             figures
+outputs/                 generated tables (CSV), DET points, figures (PDF)
 ```
 
-`experiment` is one of: `full_budget_loso`, `budget_matched_loso` (the MRD / hash-matched
-regime), `wavlm_frozen_loso`, `wavlm_budget_matched_loso`, and the CoRS proxy anchors
-`cors_facodec` / `cors_sqcodec` / `cors_vocos` (held in the `COSG_POOLED` "fold").
+CodecFake+ `experiment` is one of: `full_budget_loso`, `budget_matched_loso` (MRD),
+`wavlm_frozen_loso`, `wavlm_budget_matched_loso`, and the CoRS proxy anchors
+`cors_facodec` / `cors_sqcodec` / `cors_vocos` / `cors_spectralcodecs`
+(held in the `COSG_POOLED` "fold").
+
+### Seed coverage notes (no silent exclusions)
+
+- The factorial focus cells (SS2/SS1/NS3 × {558, 1000} × 3 samplers and SS2/NS3 full)
+  carry seeds {7, 11, 17, 29, 31}; SIMPLESPEECH1 has no `budget_full` cell of its own —
+  its full-budget reference is the 10-seed `full_budget_loso` experiment.
+- The MLAAD-en sampler blocks carry seeds {7, 42, 99, 123, 2024}; the TORTOISE
+  hash/source-balanced cells carry 10 additional seeds (a pre-registered power
+  extension for the only hard non-reference fold; all seeds are reported).
 
 ## Provenance and leak-freeness
 
-All primary numbers exclude every test record byte-identical (SHA-256) to a training
-record (all bona-fide; 13 of 62 for SIMPLESPEECH2, 0 for MASKGCT), listed in
+All primary CodecFake+ numbers exclude every test record byte-identical (SHA-256) to a
+training record (all bona-fide; 13 of 62 for SIMPLESPEECH2, 0 for MASKGCT), listed in
 `data/collision_details.csv`. These duplicates reflect source-dataset reuse in the
-upstream corpus, not contamination introduced here. The scores are the post-hoc outputs
-of two diagnostic instruments — an XLS-R + AASIST adapter detector and a frozen
-WavLM-Base+ backend — used as instruments, not as detector contributions.
+upstream corpus, not contamination introduced here. Cross-corpus re-slices need no such
+pruning (independent bona-fide pools). The scores are post-hoc outputs of two diagnostic
+instruments — an XLS-R + AASIST adapter detector and a frozen WavLM-Base+ backend — used
+as instruments, not as detector contributions.
 
 ## Upstream data
 
-Scores are derived from the **CodecFake+** dataset
-(https://github.com/ResponsibleGenAI/CodecFake-Plus-Dataset). Please cite CodecFake+ and
-observe its license for any use of the underlying audio.
+CodecFake+ scores derive from the **CodecFake+** dataset
+(https://github.com/ResponsibleGenAI/CodecFake-Plus-Dataset). The control re-slices
+derive from ASVspoof2019-LA, ASVspoof5, MLAAD, and LibriSpeech. Please cite the upstream
+datasets and observe their licenses for any use of the underlying audio.
 
 ## License
 
 Code is released under the MIT License (see `LICENSE`). The derived score files are
 released for reproducibility under CC BY 4.0; the underlying audio remains governed by
-the CodecFake+ license.
+the upstream dataset licenses.
