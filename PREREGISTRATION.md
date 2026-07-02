@@ -44,6 +44,19 @@ whichever way the rule resolves. Nulls and costs are reported alongside gains.
 - **Base-5 vs. 15-seed (both reported):** base-5 delta +0.085 (95% CI includes
   zero); 15-seed delta +0.109 [0.018, 0.203].
 
+### Uniform MLAAD extension (pre-registered before running; this commit predates the runs)
+
+To remove any appearance that seeds were added only to the fold that became
+significant, ALL nine MLAAD-en folds (not only TORTOISE) are extended from 5 to
+15 seeds for the hash and source-balanced samplers, using the same 10 added
+seeds {11, 17, 29, 31, 47, 59, 71, 83, 101, 127} fixed above. Decision rule
+(fixed before running): report every fold's 15-seed hierarchical paired CI
+whatever it shows; the saturated folds are expected to stay non-significant
+(they are at ceiling) and TORTOISE remains the only below-ceiling non-reference
+fold. No fold's inclusion or seed count is chosen after seeing its result. This
+file is committed to the public repository BEFORE the extension runs, so its git
+timestamp establishes the rule as prior.
+
 ## ASVspoof5 second-instrument composition sweep (Sec. VI)
 
 - **Pre-registered:** under frozen WavLM the ASVspoof5 re-slice is testable
