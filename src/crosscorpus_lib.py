@@ -23,14 +23,14 @@ CROSS = ROOT / "data" / "crosscorpus"
 REFERENCE = {"asvspoof2019la": "A07", "asvspoof5": "A17", "mlaad": "JENNY"}
 
 
-def load(corpus: str, block: str, condition: str = "xlsr_peft_adapter"):
-    """Return {fold: {seed: (labels, scores)}}."""
+def load(corpus: str, block: str, condition: str = "xlsr_peft_adapter", with_utts: bool = False):
+    """Return {fold: {seed: (labels, scores)}} (or (labels, scores, utts))."""
     base = CROSS / corpus / block / condition
-    out: dict[str, dict[int, tuple[np.ndarray, np.ndarray]]] = {}
+    out: dict = {}
     for f in sorted(base.glob("seed_*/*.jsonl")):
         fold = f.stem
         seed = int(f.parent.name.replace("seed_", ""))
-        labels, scores = [], []
+        labels, scores, utts = [], [], []
         for ln in f.open():
             ln = ln.strip()
             if not ln:
@@ -38,10 +38,11 @@ def load(corpus: str, block: str, condition: str = "xlsr_peft_adapter"):
             o = json.loads(ln)
             labels.append(1 if o.get("label") == "spoof" else 0)
             scores.append(float(o["score"]))
+            utts.append(str(o.get("utterance_id", "")))
         if not scores or len(set(labels)) < 2:
             continue
-        out.setdefault(fold, {})[seed] = (np.asarray(labels, dtype=int),
-                                          np.asarray(scores, dtype=float))
+        cell = (np.asarray(labels, dtype=int), np.asarray(scores, dtype=float))
+        out.setdefault(fold, {})[seed] = cell + ((utts,) if with_utts else ())
     return out
 
 

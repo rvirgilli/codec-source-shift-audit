@@ -188,3 +188,52 @@ def rank_intervals(items, experiment, reps=2000, seed=17062026):
         out[f] = (float(np.median(rv)), float(np.percentile(rv, 2.5)), float(np.percentile(rv, 97.5)),
                   float(np.mean(av)), float(np.percentile(av, 2.5)), float(np.percentile(av, 97.5)))
     return out
+
+
+def hierarchical_paired_delta(cells_a, cells_b, reps=10000, seed=7):
+    """Hierarchical seed+utterance bootstrap CI for mean_b - mean_a AUROC.
+
+    cells_x: {seed: (labels, scores, utts)} for the SAME test fold under two
+    training conditions; pairing is at both levels (same resampled seeds, same
+    resampled test utterances scored under both conditions). Returns
+    (point, [lo95, hi95], bootstrap_samples) — callers derive family-adjusted
+    (Bonferroni) intervals from the returned samples.
+    """
+    rng = random.Random(seed)
+    seeds = sorted(set(cells_a) & set(cells_b))
+    data = {}
+    for s_ in seeds:
+        la, sa, ua = cells_a[s_]
+        lb, sb, ub = cells_b[s_]
+        ma = {u: (l, sc) for u, l, sc in zip(ua, la, sa)}
+        mb = {u: (l, sc) for u, l, sc in zip(ub, lb, sb)}
+        common = sorted(set(ma) & set(mb))
+        lab = np.array([ma[u][0] for u in common])
+        data[s_] = (lab, np.array([ma[u][1] for u in common]),
+                    np.array([mb[u][1] for u in common]),
+                    np.where(lab == 1)[0], np.where(lab == 0)[0])
+    def point_delta():
+        va, vb = [], []
+        for s_ in seeds:
+            lab, xa, xb, _, _ = data[s_]
+            va.append(auroc(lab, xa)); vb.append(auroc(lab, xb))
+        return float(np.mean(vb) - np.mean(va))
+    samples = []
+    for _ in range(reps):
+        drawn = [seeds[rng.randrange(len(seeds))] for _ in seeds]
+        da, db = [], []
+        for s_ in drawn:
+            lab, xa, xb, pos, neg = data[s_]
+            if len(pos) < 2 or len(neg) < 2:
+                continue
+            idx = np.concatenate([
+                np.array([pos[rng.randrange(len(pos))] for _ in range(len(pos))]),
+                np.array([neg[rng.randrange(len(neg))] for _ in range(len(neg))])])
+            L = lab[idx]
+            da.append(auroc(L, xa[idx])); db.append(auroc(L, xb[idx]))
+        if da:
+            samples.append(np.mean(db) - np.mean(da))
+    arr = np.asarray(samples)
+    return (round(point_delta(), 4),
+            [round(float(np.percentile(arr, 2.5)), 4), round(float(np.percentile(arr, 97.5)), 4)],
+            arr)

@@ -13,7 +13,7 @@ from __future__ import annotations
 import itertools, json, random
 import numpy as np
 
-from audit_lib import ROOT, load_exclude, auroc
+from audit_lib import ROOT, load_exclude, auroc, hierarchical_paired_delta
 
 TREE = ROOT / "data" / "factorial"
 FOLDS = ["CLAMTTS", "GPST", "NS2", "UNIAUDIO", "VALLE",
@@ -32,20 +32,27 @@ def kendall_tau(a, b):
     return (c - d) / (0.5 * n * (n - 1))
 
 
-def per_seed_auroc(fold, samp, excl):
+def per_seed_cells(fold, samp, excl):
+    """{seed: (labels, scores, utts)} for hierarchical CIs."""
     d = {}
     for f in sorted((TREE / fold / "budget_558" / samp).glob("seed_*.jsonl")):
         seed = int(f.stem.replace("seed_", ""))
-        lab, sc = [], []
+        lab, sc, ut = [], [], []
         for ln in f.open():
             o = json.loads(ln)
-            if str(o.get("utterance_id", "")) in excl:
+            u = str(o.get("utterance_id", ""))
+            if u in excl:
                 continue
             lab.append(1 if o.get("label") == "spoof" else 0)
             sc.append(float(o["score"]))
+            ut.append(u)
         if sum(lab) and len(lab) - sum(lab):
-            d[seed] = auroc(np.asarray(lab), np.asarray(sc))
+            d[seed] = (np.asarray(lab), np.asarray(sc), ut)
     return d
+
+
+def per_seed_auroc(fold, samp, excl):
+    return {s: auroc(l, sc) for s, (l, sc, _) in per_seed_cells(fold, samp, excl).items()}
 
 
 def paired_ci(c1, c2):
@@ -65,11 +72,21 @@ def main():
     M = {s: {f: float(np.mean(list(cells[(f, s)].values()))) for f in FOLDS} for s in SAMPLERS}
 
     print("== Recipe table (paper Table I): naive (hash) vs source-balanced @558, leak-free ==")
-    print(f"{'fold':14s} {'Q.':>4} {'naive':>7} {'balanced':>9} {'delta':>7} {'95% CI':>18}")
+    print("   (hierarchical seed+utterance bootstrap CIs; Bonferroni family m=8)")
+    print(f"{'fold':14s} {'Q.':>4} {'naive':>7} {'balanced':>9} {'delta':>7} {'95% CI':>19} {'Bonf':>5}")
+    m_family = len(FOLDS)
+    q = 100 * 0.05 / (2 * m_family)
+    hier = {}
+    for f in FOLDS:
+        a = per_seed_cells(f, "hash", excl)
+        b = per_seed_cells(f, "source-balanced", excl)
+        hier[f] = hierarchical_paired_delta(a, b)
     for f in sorted(FOLDS, key=lambda x: -(M['source-balanced'][x] - M['hash'][x])):
-        mean, lo, hi = paired_ci(cells[(f, "hash")], cells[(f, "source-balanced")])
+        point, (lo, hi), arr = hier[f]
+        blo, bhi = np.percentile(arr, q), np.percentile(arr, 100 - q)
+        bonf = "yes" if (blo > 0 or bhi < 0) else "no"
         print(f"{f:14s} {QUANT.get(f, 'Mvq'):>4} {M['hash'][f]:>7.3f} {M['source-balanced'][f]:>9.3f} "
-              f"{mean:>+7.3f} {'[' + str(lo) + ', ' + str(hi) + ']':>18}")
+              f"{point:>+7.3f} {'[' + format(lo, '.3f') + ', ' + format(hi, '.3f') + ']':>19} {bonf:>5}")
 
     def ranks(sampdict):
         order = sorted(FOLDS, key=lambda f: sampdict[f])

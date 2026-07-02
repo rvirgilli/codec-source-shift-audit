@@ -20,7 +20,7 @@ from __future__ import annotations
 import itertools, random
 import numpy as np
 
-from audit_lib import auroc
+from audit_lib import auroc, hierarchical_paired_delta
 import crosscorpus_lib as cc
 
 COND = "wavlm_frozen_backend"
@@ -61,19 +61,26 @@ def main():
     if not folds:
         print("no ASVspoof5 wavlm sampler data in the bundle"); return
     print("== ASVspoof5 / frozen WavLM: composition at fixed MRD budget ==")
+    print("   (hierarchical seed+utterance bootstrap CIs; Bonferroni family m=8)")
     print(f"{'fold':6} {'full':>6} {'hash':>6} {'bal':>6} {'prop':>6} {'d(bal-hash)':>12} {'95% CI':>17} {'n':>3}")
     M = {s: {} for s in SAMPLERS}
+    q = 100 * 0.05 / (2 * 8)
     for fold in folds:
         for s in SAMPLERS:
             M[s][fold] = float(np.mean(list(cells[s][fold].values()))) if fold in cells[s] else float("nan")
-        res = paired_ci(cells["hash"][fold], cells["source-balanced"].get(fold, {}))
-        mean, lo, hi, n = res if res else (float("nan"),) * 3 + (0,)
+        a = cc.load("asvspoof5", "samp_hash", COND, with_utts=True).get(fold, {})
+        b = cc.load("asvspoof5", "samp_source-balanced", COND, with_utts=True).get(fold, {})
+        point, (lo, hi), arr = hierarchical_paired_delta(a, b)
+        n = len(set(a) & set(b))
+        blo, bhi = np.percentile(arr, q), np.percentile(arr, 100 - q)
         fb = float(np.mean(list(full[fold].values()))) if fold in full else float("nan")
         flag = " *below-ceiling*" if fb < 0.95 else ""
-        ex = " CI-excl-0" if res and (lo > 0 or hi < 0) else ""
+        ex = " CI-excl-0" if (lo > 0 or hi < 0) else ""
+        if blo > 0 or bhi < 0:
+            ex += " Bonf-robust"
         print(f"{fold:6} {fb:>6.3f} {M['hash'][fold]:>6.3f} {M['source-balanced'][fold]:>6.3f} "
-              f"{M['source-proportional'][fold]:>6.3f} {mean:>+12.3f} "
-              f"{'[' + str(lo) + ', ' + str(hi) + ']':>17} {n:>3}{flag}{ex}")
+              f"{M['source-proportional'][fold]:>6.3f} {point:>+12.3f} "
+              f"{'[' + format(lo, '.3f') + ', ' + format(hi, '.3f') + ']':>17} {n:>3}{flag}{ex}")
 
     print("\n== Cross-composition agreement / hardest fold ==")
     for x, y in itertools.combinations(SAMPLERS, 2):

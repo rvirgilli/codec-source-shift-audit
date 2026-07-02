@@ -11,13 +11,13 @@ Custom diagnostic TTS-model-holdout re-slice with LibriSpeech bona-fide; NOT an
 official MLAAD protocol.
 """
 from __future__ import annotations
-import random
 import numpy as np
 
-from audit_lib import auroc
+from audit_lib import auroc, hierarchical_paired_delta
 import crosscorpus_lib as cc
 
 REPS, RNG_SEED = 2000, 7
+BONF_M = 9  # folds in the MLAAD family
 
 
 def per_seed_auroc(loaded):
@@ -25,16 +25,16 @@ def per_seed_auroc(loaded):
             for fold, d in loaded.items()}
 
 
-def paired_ci(c1, c2):
-    common = sorted(set(c1) & set(c2))
-    diffs = [c2[s] - c1[s] for s in common]
-    if not diffs:
+def hier_ci(corpus, fold):
+    a = cc.load(corpus, "samp_hash", "xlsr_peft_adapter", with_utts=True).get(fold, {})
+    b = cc.load(corpus, "samp_source-balanced", "xlsr_peft_adapter", with_utts=True).get(fold, {})
+    if not (set(a) & set(b)):
         return None
-    r = random.Random(RNG_SEED); n = len(diffs)
-    bs = [np.mean([diffs[r.randrange(n)] for _ in range(n)]) for _ in range(REPS)]
-    return (round(float(np.mean(diffs)), 3),
-            round(float(np.percentile(bs, 2.5)), 3),
-            round(float(np.percentile(bs, 97.5)), 3), n)
+    point, (lo, hi), arr = hierarchical_paired_delta(a, b)
+    q = 100 * 0.05 / (2 * BONF_M)
+    blo, bhi = np.percentile(arr, q), np.percentile(arr, 100 - q)
+    return (round(point, 3), round(lo, 3), round(hi, 3), len(set(a) & set(b)),
+            bool(blo > 0 or bhi < 0))
 
 
 def main():
@@ -43,17 +43,20 @@ def main():
     full = per_seed_auroc(cc.load("mlaad", "full"))
     ref = cc.REFERENCE["mlaad"]
     print("== MLAAD-en recipe check: hash vs source-balanced @ fixed MRD budget ==")
+    print("   (hierarchical seed+utterance bootstrap CIs; Bonferroni family m=9)")
     print(f"{'fold':14s} {'full':>6} {'hash':>6} {'bal':>6} {'delta':>7} {'95% CI':>18} {'n':>3}")
     for fold in sorted(hash_):
         h, b = hash_[fold], bal.get(fold, {})
-        res = paired_ci(h, b)
+        res = hier_ci("mlaad", fold)
         if res is None:
             continue
-        mean, lo, hi, n = res
+        mean, lo, hi, n, bonf = res
         fb = np.mean(list(full[fold].values())) if fold in full else float("nan")
         flags = " [REF]" if fold == ref else ""
         if fb < 0.95:
             flags += " [below-ceiling]"
+        if bonf:
+            flags += " Bonf-robust"
         print(f"{fold:14s} {fb:>6.3f} {np.mean(list(h.values())):>6.3f} "
               f"{np.mean(list(b.values())):>6.3f} {mean:>+7.3f} "
               f"{'[' + str(lo) + ', ' + str(hi) + ']':>18} {n:>3}{flags}")

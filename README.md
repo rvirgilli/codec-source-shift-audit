@@ -21,7 +21,7 @@ audio, no model weights, and no training required.
 |---|---|
 | Table I + Fig. 1 — composition-aware recipe: naive (hash) vs source-balanced AUROC per fold @558, with paired CIs; cross-composition Kendall tau (with seed-bootstrap CI) and rank moves (Sec. IV–V) | `src/imbalance_rankdistort.py` |
 | Table II — ceiling-robust scoping across four corpora; below-ceiling-gated mean full→MRD collapse; the naive-tau metric trap on saturated ASVspoof2019-LA; ceiling sensitivity 0.90–0.98; second-instrument (frozen WavLM) audit (Sec. VI) | `src/ceiling_robust.py` |
-| Sec. VI — second-corpus composition test: ASVspoof5 under frozen WavLM (below-ceiling folds gain up to +0.129 with CIs excluding zero; ranking composition-stable, tau 0.86) | `src/asvspoof5_composition.py` |
+| Sec. VI — second-corpus composition test: ASVspoof5 under frozen WavLM (A24 +0.129 [0.051, 0.207] Bonferroni-robust, A23 +0.079 [0.003, 0.159]; ranking composition-stable, tau 0.86) | `src/asvspoof5_composition.py` |
 | Sec. IV — full vs MRD source-holdout AUROCs, CIs, vulnerability-rank intervals, both collapse-mean definitions; SS2 drop bootstrap; SS2-vs-SS1 seed-paired tie | `src/reproduce.py` |
 | Sec. V — budget-vs-composition decomposition (SS2/SS1/NS3 × budgets 558/1000/full) | `src/factorial_decompose.py` |
 | Sec. V — second-corpus recipe check on the MLAAD-en re-slice (TORTOISE et al.) | `src/mlaad_recipe.py` |
@@ -49,9 +49,10 @@ python src/figures.py               # figures -> outputs/*.pdf
 Expected headline numbers (leak-free, deterministic at the default 2000 reps):
 
 ```
-recipe @558:            SIMPLESPEECH2 0.673 -> 0.881 (+0.208 [0.135, 0.287])
-                        SIMPLESPEECH1 0.594 -> 0.752 (+0.157 [0.072, 0.275])
+recipe @558:            SIMPLESPEECH2 0.673 -> 0.881 (+0.208 [0.111, 0.309], Bonferroni-robust)
+                        SIMPLESPEECH1 0.594 -> 0.752 (+0.157 [0.041, 0.287], Bonferroni-robust)
                         NS3           0.805 -> 0.756 (-0.049, n.s.)
+                        (hierarchical seed+utterance bootstrap CIs)
 non-MASKGCT mean AUROC: full 0.909  ->  MRD 0.767
 mean full->MRD collapse: below-ceiling-gated 0.146 | all-non-MASKGCT 0.142
 SIMPLESPEECH2:          full 0.888 (rank 4/9)  ->  MRD 0.666 (rank 1)   delta 0.222
