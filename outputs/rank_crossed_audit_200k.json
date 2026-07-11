@@ -1,0 +1,1306 @@
+{
+  "alignment": {
+    "CLAMTTS": {
+      "bonafide_items": 34,
+      "common_items": 112,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 78,
+      "union_items": 112
+    },
+    "GPST": {
+      "bonafide_items": 10,
+      "common_items": 40,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 30,
+      "union_items": 40
+    },
+    "NS2": {
+      "bonafide_items": 15,
+      "common_items": 38,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 23,
+      "union_items": 38
+    },
+    "NS3": {
+      "bonafide_items": 30,
+      "common_items": 62,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 32,
+      "union_items": 62
+    },
+    "SIMPLESPEECH1": {
+      "bonafide_items": 19,
+      "common_items": 51,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 32,
+      "union_items": 51
+    },
+    "SIMPLESPEECH2": {
+      "bonafide_items": 18,
+      "common_items": 49,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 31,
+      "union_items": 49
+    },
+    "UNIAUDIO": {
+      "bonafide_items": 9,
+      "common_items": 20,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 11,
+      "union_items": 20
+    },
+    "VALLE": {
+      "bonafide_items": 53,
+      "common_items": 110,
+      "dropped_noncommon_items": 0,
+      "spoof_items": 57,
+      "union_items": 110
+    }
+  },
+  "composition_effect_heterogeneity": {
+    "definition": "(balanced-hash)_left - (balanced-hash)_right",
+    "global_max_t_p": 0.17266913665431674,
+    "global_observed_max_abs_t": 2.5028202172037717,
+    "max_t_critical": 3.080676795961752,
+    "pairwise": [
+      {
+        "left": "CLAMTTS",
+        "max_t_adjusted_p": 0.9999950000249999,
+        "max_t_hi95": 0.5106968019824942,
+        "max_t_lo95": -0.45595773712578214,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.5809875,
+        "point_delta_left_minus_delta_right": 0.027369532428356047,
+        "right": "GPST"
+      },
+      {
+        "left": "CLAMTTS",
+        "max_t_adjusted_p": 0.9999750001249994,
+        "max_t_hi95": 0.2663634523710461,
+        "max_t_lo95": -0.3208417788186817,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.40262,
+        "point_delta_left_minus_delta_right": -0.02723916322381781,
+        "right": "NS2"
+      },
+      {
+        "left": "CLAMTTS",
+        "max_t_adjusted_p": 0.9991000044999775,
+        "max_t_hi95": 0.28950934593821065,
+        "max_t_lo95": -0.40058846289968,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.3097225,
+        "point_delta_left_minus_delta_right": -0.05553955848073466,
+        "right": "UNIAUDIO"
+      },
+      {
+        "left": "CLAMTTS",
+        "max_t_adjusted_p": 0.7780411097944511,
+        "max_t_hi95": 0.1036451749743108,
+        "max_t_lo95": -0.2847432501374598,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.0765,
+        "point_delta_left_minus_delta_right": -0.09054903758157451,
+        "right": "VALLE"
+      },
+      {
+        "left": "CLAMTTS",
+        "max_t_adjusted_p": 0.5803770981145094,
+        "max_t_hi95": 0.09357534779379606,
+        "max_t_lo95": -0.3373099671476102,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.036385,
+        "point_delta_left_minus_delta_right": -0.12186730967690707,
+        "right": "SIMPLESPEECH1"
+      },
+      {
+        "left": "CLAMTTS",
+        "max_t_adjusted_p": 0.5315873420632897,
+        "max_t_hi95": 0.12067498486061257,
+        "max_t_lo95": -0.46642337520103294,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.025537499999999998,
+        "point_delta_left_minus_delta_right": -0.1728741951702102,
+        "right": "SIMPLESPEECH2"
+      },
+      {
+        "left": "CLAMTTS",
+        "max_t_adjusted_p": 0.9068354658226709,
+        "max_t_hi95": 0.30708958618061943,
+        "max_t_lo95": -0.13843385465724067,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.8803975,
+        "point_delta_left_minus_delta_right": 0.08432786576168938,
+        "right": "NS3"
+      },
+      {
+        "left": "GPST",
+        "max_t_adjusted_p": 0.9999250003749981,
+        "max_t_hi95": 0.45786721215040793,
+        "max_t_lo95": -0.5670846034547556,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.34112250000000005,
+        "point_delta_left_minus_delta_right": -0.054608695652173855,
+        "right": "NS2"
+      },
+      {
+        "left": "GPST",
+        "max_t_adjusted_p": 0.9997900010499947,
+        "max_t_hi95": 0.5675302310856908,
+        "max_t_lo95": -0.7333484129038722,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.34345250000000005,
+        "point_delta_left_minus_delta_right": -0.08290909090909071,
+        "right": "UNIAUDIO"
+      },
+      {
+        "left": "GPST",
+        "max_t_adjusted_p": 0.9934950325248374,
+        "max_t_hi95": 0.40525762322737413,
+        "max_t_lo95": -0.6410947632472352,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.2427875,
+        "point_delta_left_minus_delta_right": -0.11791857000993056,
+        "right": "VALLE"
+      },
+      {
+        "left": "GPST",
+        "max_t_adjusted_p": 0.9702451487742562,
+        "max_t_hi95": 0.3503619888330761,
+        "max_t_lo95": -0.6488356730436023,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.175595,
+        "point_delta_left_minus_delta_right": -0.1492368421052631,
+        "right": "SIMPLESPEECH1"
+      },
+      {
+        "left": "GPST",
+        "max_t_adjusted_p": 0.9359553202233989,
+        "max_t_hi95": 0.3726375537773188,
+        "max_t_lo95": -0.7731250089744512,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.14180749999999998,
+        "point_delta_left_minus_delta_right": -0.20024372759856623,
+        "right": "SIMPLESPEECH2"
+      },
+      {
+        "left": "GPST",
+        "max_t_adjusted_p": 0.9998350008249959,
+        "max_t_hi95": 0.5191891051133474,
+        "max_t_lo95": -0.4052724384466807,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.6486575,
+        "point_delta_left_minus_delta_right": 0.05695833333333333,
+        "right": "NS3"
+      },
+      {
+        "left": "NS2",
+        "max_t_adjusted_p": 0.9999950000249999,
+        "max_t_hi95": 0.3821913692885238,
+        "max_t_lo95": -0.43879215980235753,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.40578749999999997,
+        "point_delta_left_minus_delta_right": -0.028300395256916855,
+        "right": "UNIAUDIO"
+      },
+      {
+        "left": "NS2",
+        "max_t_adjusted_p": 0.9980200098999505,
+        "max_t_hi95": 0.2796864249090585,
+        "max_t_lo95": -0.4063061736245719,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.27103,
+        "point_delta_left_minus_delta_right": -0.0633098743577567,
+        "right": "VALLE"
+      },
+      {
+        "left": "NS2",
+        "max_t_adjusted_p": 0.9401652991735041,
+        "max_t_hi95": 0.18003601713638828,
+        "max_t_lo95": -0.3692923100425668,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.13889,
+        "point_delta_left_minus_delta_right": -0.09462814645308926,
+        "right": "SIMPLESPEECH1"
+      },
+      {
+        "left": "NS2",
+        "max_t_adjusted_p": 0.7867960660196699,
+        "max_t_hi95": 0.17007822465112654,
+        "max_t_lo95": -0.4613482885439113,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.0787075,
+        "point_delta_left_minus_delta_right": -0.14563503194639238,
+        "right": "SIMPLESPEECH2"
+      },
+      {
+        "left": "NS2",
+        "max_t_adjusted_p": 0.9682251588742057,
+        "max_t_hi95": 0.4800980474810669,
+        "max_t_lo95": -0.2569639895100525,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.822165,
+        "point_delta_left_minus_delta_right": 0.11156702898550719,
+        "right": "NS3"
+      },
+      {
+        "left": "UNIAUDIO",
+        "max_t_adjusted_p": 0.9999350003249984,
+        "max_t_hi95": 0.30485167545543457,
+        "max_t_lo95": -0.37487063365711426,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.365145,
+        "point_delta_left_minus_delta_right": -0.035009479100839846,
+        "right": "VALLE"
+      },
+      {
+        "left": "UNIAUDIO",
+        "max_t_adjusted_p": 0.9982850085749572,
+        "max_t_hi95": 0.3019503945939277,
+        "max_t_lo95": -0.4346058969862725,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.279915,
+        "point_delta_left_minus_delta_right": -0.0663277511961724,
+        "right": "SIMPLESPEECH1"
+      },
+      {
+        "left": "UNIAUDIO",
+        "max_t_adjusted_p": 0.9804350978245109,
+        "max_t_hi95": 0.30767452454442645,
+        "max_t_lo95": -0.5423437979233775,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.1883975,
+        "point_delta_left_minus_delta_right": -0.11733463668947552,
+        "right": "SIMPLESPEECH2"
+      },
+      {
+        "left": "UNIAUDIO",
+        "max_t_adjusted_p": 0.9385553072234639,
+        "max_t_hi95": 0.5436184101032486,
+        "max_t_lo95": -0.26388356161840054,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.86217,
+        "point_delta_left_minus_delta_right": 0.13986742424242404,
+        "right": "NS3"
+      },
+      {
+        "left": "VALLE",
+        "max_t_adjusted_p": 0.9998350008249959,
+        "max_t_hi95": 0.22341210152565438,
+        "max_t_lo95": -0.2860486457163195,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.354935,
+        "point_delta_left_minus_delta_right": -0.031318272095332556,
+        "right": "SIMPLESPEECH1"
+      },
+      {
+        "left": "VALLE",
+        "max_t_adjusted_p": 0.9932050339748302,
+        "max_t_hi95": 0.2793821125567806,
+        "max_t_lo95": -0.44403242773405194,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.249415,
+        "point_delta_left_minus_delta_right": -0.08232515758863568,
+        "right": "SIMPLESPEECH2"
+      },
+      {
+        "left": "VALLE",
+        "max_t_adjusted_p": 0.17266913665431674,
+        "max_t_hi95": 0.390129764723841,
+        "max_t_lo95": -0.0403759580373132,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.99308,
+        "point_delta_left_minus_delta_right": 0.1748769033432639,
+        "right": "NS3"
+      },
+      {
+        "left": "SIMPLESPEECH1",
+        "max_t_adjusted_p": 0.9986050069749651,
+        "max_t_hi95": 0.2417142966146223,
+        "max_t_lo95": -0.34372806760122854,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.29745,
+        "point_delta_left_minus_delta_right": -0.05100688549330312,
+        "right": "SIMPLESPEECH2"
+      },
+      {
+        "left": "SIMPLESPEECH1",
+        "max_t_adjusted_p": 0.24675876620616896,
+        "max_t_hi95": 0.48067632296629115,
+        "max_t_lo95": -0.06828597208909826,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.98863,
+        "point_delta_left_minus_delta_right": 0.20619517543859645,
+        "right": "NS3"
+      },
+      {
+        "left": "SIMPLESPEECH2",
+        "max_t_adjusted_p": 0.24594377028114858,
+        "max_t_hi95": 0.5992989261090541,
+        "max_t_lo95": -0.08489480424525497,
+        "max_t_resolved": false,
+        "p_delta_left_gt_delta_right": 0.99366,
+        "point_delta_left_minus_delta_right": 0.25720206093189957,
+        "right": "NS3"
+      }
+    ],
+    "resolved_pair_count": 0
+  },
+  "composition_vs_seed_perturbation": {
+    "crossed_seed_and_item_bootstrap": {
+      "cross": {
+        "hi95": 0.4892857142857142,
+        "lo95": -0.24642857142857139,
+        "mean": 0.1395186218046035,
+        "median": 0.1464285714285714
+      },
+      "difference": {
+        "hi95": 0.09999999999999998,
+        "lo95": -0.8214285714285714,
+        "mean": -0.30736179497976157,
+        "median": -0.2857142857142857
+      },
+      "p_difference_below_zero": 0.906695,
+      "within": {
+        "hi95": 0.7499999999999999,
+        "lo95": 0.12499999999999997,
+        "mean": 0.4468804167843651,
+        "median": 0.45
+      }
+    },
+    "definition": {
+      "cross": "mean over all 10 2/3 splits of [tau_b(hash_A,balanced_B)+tau_b(hash_B,balanced_A)]/2",
+      "difference": "cross - within; negative means cross-composition agreement is lower",
+      "within": "mean over all 10 2/3 splits of [tau_b(hash_A,hash_B)+tau_b(balanced_A,balanced_B)]/2"
+    },
+    "item_only_bootstrap_conditional_on_five_seeds": {
+      "cross": {
+        "hi95": 0.42857142857142855,
+        "lo95": -0.12499999999999997,
+        "mean": 0.16536874464317974,
+        "median": 0.17142857142857143
+      },
+      "difference": {
+        "hi95": 0.1357142857142857,
+        "lo95": -0.38571428571428573,
+        "mean": -0.11249453349803107,
+        "median": -0.10714285714285715
+      },
+      "p_difference_below_zero": 0.79141,
+      "within": {
+        "hi95": 0.4892857142857143,
+        "lo95": 0.024999999999999998,
+        "mean": 0.2778632781412108,
+        "median": 0.2857142857142857
+      }
+    },
+    "observed": {
+      "cross": 0.07499999999999998,
+      "difference": -0.1857142857142857,
+      "within": 0.2607142857142857
+    }
+  },
+  "hash_vs_balanced_tau_b": {
+    "hi95": 0.6428571428571429,
+    "lo95": -0.35714285714285715,
+    "mean": 0.13677819249128442,
+    "median": 0.14285714285714285,
+    "point": 0.07142857142857142
+  },
+  "method": {
+    "auroc": "tie-correct Mann-Whitney; 0.5 credit for cross-class ties",
+    "conditions": [
+      "hash",
+      "source-balanced"
+    ],
+    "fold_order": [
+      "CLAMTTS",
+      "GPST",
+      "NS2",
+      "UNIAUDIO",
+      "VALLE",
+      "SIMPLESPEECH1",
+      "SIMPLESPEECH2",
+      "NS3"
+    ],
+    "item_bootstrap": "class-stratified within each fold; one draw shared across all seeds and both arms",
+    "rank": "ascending average rank; rank 1 is lowest AUROC (most vulnerable)",
+    "replicates": 200000,
+    "rng_seed": 20260711,
+    "seed_bootstrap": "one five-seed draw shared across all folds and both arms",
+    "seeds": [
+      7,
+      11,
+      17,
+      29,
+      31
+    ],
+    "simultaneous_intervals": "single-step bootstrap max-t over all 28 source pairs, fixed bootstrap-SD studentizer"
+  },
+  "point_seed_mean_auroc": {
+    "hash": {
+      "CLAMTTS": 0.7400452488687783,
+      "GPST": 0.7620000000000001,
+      "NS2": 0.8191304347826087,
+      "NS3": 0.8047916666666666,
+      "SIMPLESPEECH1": 0.5944078947368421,
+      "SIMPLESPEECH2": 0.6727598566308244,
+      "UNIAUDIO": 0.7434343434343436,
+      "VALLE": 0.6865276398543528
+    },
+    "source-balanced": {
+      "CLAMTTS": 0.7754147812971344,
+      "GPST": 0.7700000000000001,
+      "NS2": 0.8817391304347826,
+      "NS3": 0.7558333333333332,
+      "SIMPLESPEECH1": 0.7516447368421052,
+      "SIMPLESPEECH2": 0.8810035842293906,
+      "UNIAUDIO": 0.8343434343434343,
+      "VALLE": 0.8124462098642834
+    }
+  },
+  "rank_uncertainty": {
+    "hash": {
+      "bonferroni_percentile_resolved_count": 0,
+      "max_t_critical": 3.0450216093696576,
+      "max_t_resolved_count": 0,
+      "pairwise": [
+        {
+          "bonferroni_percentile_hi95": 0.37472420930862427,
+          "bonferroni_percentile_lo95": -0.3007568120956421,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.9999950000249999,
+          "max_t_hi95": 0.30639340865881726,
+          "max_t_lo95": -0.35030291092126087,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.3957575,
+          "point_left_minus_right": -0.021954751131221806,
+          "right": "GPST"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.19110679626464844,
+          "bonferroni_percentile_lo95": -0.29681235551834106,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.951560242198789,
+          "max_t_hi95": 0.14715386948129594,
+          "max_t_lo95": -0.30532424130895675,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.1409675,
+          "point_left_minus_right": -0.0790851859138304,
+          "right": "NS2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.3689393103122711,
+          "bonferroni_percentile_lo95": -0.28142547607421875,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.307724411989992,
+          "max_t_lo95": -0.3145026011211225,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.4617225,
+          "point_left_minus_right": -0.0033890945655652427,
+          "right": "UNIAUDIO"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.3426460325717926,
+          "bonferroni_percentile_lo95": -0.2263856679201126,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.9984850075749622,
+          "max_t_hi95": 0.3359606257819273,
+          "max_t_lo95": -0.22892540775307635,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.715705,
+          "point_left_minus_right": 0.05351760901442548,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4121391475200653,
+          "bonferroni_percentile_lo95": -0.11143838614225388,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.5884920575397123,
+          "max_t_hi95": 0.39532031702637593,
+          "max_t_lo95": -0.10404560876250346,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.96265,
+          "point_left_minus_right": 0.14563735413193624,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.3652825355529785,
+          "bonferroni_percentile_lo95": -0.19544628262519836,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.9930250348748256,
+          "max_t_hi95": 0.34069910998468855,
+          "max_t_lo95": -0.20612832550878069,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.7697,
+          "point_left_minus_right": 0.06728539223795393,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.20011530816555023,
+          "bonferroni_percentile_lo95": -0.3140852451324463,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.990160049199754,
+          "max_t_hi95": 0.1831731714831939,
+          "max_t_lo95": -0.3126660070789704,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.21189,
+          "point_left_minus_right": -0.06474641779788826,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.29031476378440857,
+          "bonferroni_percentile_lo95": -0.4321785569190979,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9989900050499747,
+          "max_t_hi95": 0.2645932051824488,
+          "max_t_lo95": -0.37885407474766597,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.2894075,
+          "point_left_minus_right": -0.0571304347826086,
+          "right": "NS2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.49172016978263855,
+          "bonferroni_percentile_lo95": -0.5037492513656616,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.5013949591150187,
+          "max_t_lo95": -0.4642636459837056,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.55366,
+          "point_left_minus_right": 0.018565656565656563,
+          "right": "UNIAUDIO"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4391360878944397,
+          "bonferroni_percentile_lo95": -0.3322034180164337,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9979300103499482,
+          "max_t_hi95": 0.452989613306124,
+          "max_t_lo95": -0.3020448930148294,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.732965,
+          "point_left_minus_right": 0.07547236014564729,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.5133696794509888,
+          "bonferroni_percentile_lo95": -0.28209400177001953,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.8627506862465688,
+          "max_t_hi95": 0.5534036725696766,
+          "max_t_lo95": -0.2182194620433605,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.9026775,
+          "point_left_minus_right": 0.16759210526315804,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4839448928833008,
+          "bonferroni_percentile_lo95": -0.3948860764503479,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9975550122249389,
+          "max_t_hi95": 0.5222668147787827,
+          "max_t_lo95": -0.3437865280404312,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.7428425000000001,
+          "point_left_minus_right": 0.08924014336917574,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.27170857787132263,
+          "bonferroni_percentile_lo95": -0.42030957341194153,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9998950005249974,
+          "max_t_hi95": 0.2935191670258842,
+          "max_t_lo95": -0.3791025003592171,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.3615475,
+          "point_left_minus_right": -0.04279166666666645,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.47463205456733704,
+          "bonferroni_percentile_lo95": -0.2882288992404938,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.9972900135499323,
+          "max_t_hi95": 0.43609706609878396,
+          "max_t_lo95": -0.28470488340225364,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.7384649999999999,
+          "point_left_minus_right": 0.07569609134826516,
+          "right": "UNIAUDIO"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.42282846570014954,
+          "bonferroni_percentile_lo95": -0.19862675666809082,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.8355958220208899,
+          "max_t_hi95": 0.42555175618619046,
+          "max_t_lo95": -0.16034616632967869,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.91444,
+          "point_left_minus_right": 0.13260279492825588,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.5016134977340698,
+          "bonferroni_percentile_lo95": -0.09377628564834595,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.19664901675491622,
+          "max_t_hi95": 0.5043625291834162,
+          "max_t_lo95": -0.0549174490918829,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.989635,
+          "point_left_minus_right": 0.22472254004576664,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4789876341819763,
+          "bonferroni_percentile_lo95": -0.19655440747737885,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.8372308138459308,
+          "max_t_hi95": 0.4705128553925375,
+          "max_t_lo95": -0.17777169908896884,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.9166625,
+          "point_left_minus_right": 0.14637057815178434,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.3114868402481079,
+          "bonferroni_percentile_lo95": -0.35645201802253723,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.3358272677573606,
+          "max_t_lo95": -0.3071497315254763,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.5701425,
+          "point_left_minus_right": 0.014338768115942147,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.3579815626144409,
+          "bonferroni_percentile_lo95": -0.31477537751197815,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 0.9987800060999695,
+          "max_t_hi95": 0.3674585257655071,
+          "max_t_lo95": -0.25364511860552563,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.7249575,
+          "point_left_minus_right": 0.056906703579990725,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4506693482398987,
+          "bonferroni_percentile_lo95": -0.2398701012134552,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 0.827480862595687,
+          "max_t_hi95": 0.4743767332739175,
+          "max_t_lo95": -0.17632383587891454,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.9142725,
+          "point_left_minus_right": 0.14902644869750148,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4333939254283905,
+          "bonferroni_percentile_lo95": -0.33616873621940613,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 0.998280008599957,
+          "max_t_hi95": 0.4331219572300786,
+          "max_t_lo95": -0.29177298362304027,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.7331749999999999,
+          "point_left_minus_right": 0.07067448680351918,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.2612825334072113,
+          "bonferroni_percentile_lo95": -0.5006927847862244,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 0.9993350033249834,
+          "max_t_hi95": 0.3083299061625897,
+          "max_t_lo95": -0.43104455262723573,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.3231775,
+          "point_left_minus_right": -0.06135732323232301,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.37569379806518555,
+          "bonferroni_percentile_lo95": -0.1990862339735031,
+          "bonferroni_percentile_resolved": false,
+          "left": "VALLE",
+          "max_t_adjusted_p": 0.9586602066989665,
+          "max_t_hi95": 0.36396544347413917,
+          "max_t_lo95": -0.17972595323911766,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.8510650000000001,
+          "point_left_minus_right": 0.09211974511751075,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4122702479362488,
+          "bonferroni_percentile_lo95": -0.34977924823760986,
+          "bonferroni_percentile_resolved": false,
+          "left": "VALLE",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.3878138704885431,
+          "max_t_lo95": -0.3602783040414862,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.53768,
+          "point_left_minus_right": 0.013767783223528451,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.16182072460651398,
+          "bonferroni_percentile_lo95": -0.47521552443504333,
+          "bonferroni_percentile_resolved": false,
+          "left": "VALLE",
+          "max_t_adjusted_p": 0.9306453467732662,
+          "max_t_hi95": 0.1966312752449525,
+          "max_t_lo95": -0.43315932886958,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.12531,
+          "point_left_minus_right": -0.11826402681231374,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.27171188592910767,
+          "bonferroni_percentile_lo95": -0.40404024720191956,
+          "bonferroni_percentile_resolved": false,
+          "left": "SIMPLESPEECH1",
+          "max_t_adjusted_p": 0.9938550307248464,
+          "max_t_hi95": 0.246553880648666,
+          "max_t_lo95": -0.4032578044366306,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.22802,
+          "point_left_minus_right": -0.0783519618939823,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.06977621465921402,
+          "bonferroni_percentile_lo95": -0.5345269441604614,
+          "bonferroni_percentile_resolved": false,
+          "left": "SIMPLESPEECH1",
+          "max_t_adjusted_p": 0.2976535117324413,
+          "max_t_hi95": 0.07644760700694309,
+          "max_t_lo95": -0.49721515086659207,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.010245,
+          "point_left_minus_right": -0.2103837719298245,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.19005930423736572,
+          "bonferroni_percentile_lo95": -0.4723530411720276,
+          "bonferroni_percentile_resolved": false,
+          "left": "SIMPLESPEECH2",
+          "max_t_adjusted_p": 0.902160489197554,
+          "max_t_hi95": 0.19521974349961924,
+          "max_t_lo95": -0.4592833635713036,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.1098225,
+          "point_left_minus_right": -0.1320318100358422,
+          "right": "NS3"
+        }
+      ],
+      "ranks": {
+        "CLAMTTS": {
+          "hi95": 7.0,
+          "lo95": 2.0,
+          "median": 5.0,
+          "point": 4.0
+        },
+        "GPST": {
+          "hi95": 8.0,
+          "lo95": 1.0,
+          "median": 6.0,
+          "point": 6.0
+        },
+        "NS2": {
+          "hi95": 8.0,
+          "lo95": 3.0,
+          "median": 7.0,
+          "point": 8.0
+        },
+        "NS3": {
+          "hi95": 8.0,
+          "lo95": 3.0,
+          "median": 7.0,
+          "point": 7.0
+        },
+        "SIMPLESPEECH1": {
+          "hi95": 4.0,
+          "lo95": 1.0,
+          "median": 1.0,
+          "point": 1.0
+        },
+        "SIMPLESPEECH2": {
+          "hi95": 7.0,
+          "lo95": 1.0,
+          "median": 3.0,
+          "point": 2.0
+        },
+        "UNIAUDIO": {
+          "hi95": 8.0,
+          "lo95": 1.0,
+          "median": 5.0,
+          "point": 5.0
+        },
+        "VALLE": {
+          "hi95": 7.0,
+          "lo95": 1.0,
+          "median": 3.0,
+          "point": 3.0
+        }
+      }
+    },
+    "source-balanced": {
+      "bonferroni_percentile_resolved_count": 0,
+      "max_t_critical": 3.0754855582342504,
+      "max_t_resolved_count": 0,
+      "pairwise": [
+        {
+          "bonferroni_percentile_hi95": 0.3821285367012024,
+          "bonferroni_percentile_lo95": -0.31047534942626953,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.33963989945738204,
+          "max_t_lo95": -0.32881033686311356,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.504685,
+          "point_left_minus_right": 0.005414781297134241,
+          "right": "GPST"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.18460887670516968,
+          "bonferroni_percentile_lo95": -0.3625958561897278,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.8866855665721671,
+          "max_t_hi95": 0.14749726226677073,
+          "max_t_lo95": -0.36014596054206716,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.09751,
+          "point_left_minus_right": -0.10632434913764821,
+          "right": "NS2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.279581218957901,
+          "bonferroni_percentile_lo95": -0.3318202495574951,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.9978500107499463,
+          "max_t_hi95": 0.22142924423534682,
+          "max_t_lo95": -0.33928655032794663,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.2467825,
+          "point_left_minus_right": -0.058928653046299906,
+          "right": "UNIAUDIO"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.16486816108226776,
+          "bonferroni_percentile_lo95": -0.2654367685317993,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.9994100029499853,
+          "max_t_hi95": 0.1740634425962192,
+          "max_t_lo95": -0.24812629973051725,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.298565,
+          "point_left_minus_right": -0.03703142856714903,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.30045539140701294,
+          "bonferroni_percentile_lo95": -0.2590606212615967,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.29477415502975146,
+          "max_t_lo95": -0.24723406611969312,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.608705,
+          "point_left_minus_right": 0.02377004445502917,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.17366130650043488,
+          "bonferroni_percentile_lo95": -0.37195077538490295,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 0.904120479397603,
+          "max_t_hi95": 0.1555047241463723,
+          "max_t_lo95": -0.3666823300108848,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.10508,
+          "point_left_minus_right": -0.10558880293225625,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.2503204345703125,
+          "bonferroni_percentile_lo95": -0.19445693492889404,
+          "bonferroni_percentile_resolved": false,
+          "left": "CLAMTTS",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.2338367064047725,
+          "max_t_lo95": -0.19467381047717025,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.6042775,
+          "point_left_minus_right": 0.019581447963801124,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.2585882544517517,
+          "bonferroni_percentile_lo95": -0.4943976402282715,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9748701256493717,
+          "max_t_hi95": 0.2443498058941055,
+          "max_t_lo95": -0.4678280667636704,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.1615925,
+          "point_left_minus_right": -0.11173913043478245,
+          "right": "NS2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.32719823718070984,
+          "bonferroni_percentile_lo95": -0.47001737356185913,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9993150034249829,
+          "max_t_hi95": 0.29643558286657257,
+          "max_t_lo95": -0.42512245155344086,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.2898525,
+          "point_left_minus_right": -0.06434343434343415,
+          "right": "UNIAUDIO"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.229712575674057,
+          "bonferroni_percentile_lo95": -0.45773810148239136,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9999450002749987,
+          "max_t_hi95": 0.30024658255133563,
+          "max_t_lo95": -0.38513900227990217,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.37854,
+          "point_left_minus_right": -0.04244620986428327,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.33285680413246155,
+          "bonferroni_percentile_lo95": -0.3867715895175934,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.36598290292840274,
+          "max_t_lo95": -0.3292723766126129,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.5857399999999999,
+          "point_left_minus_right": 0.01835526315789493,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.20255349576473236,
+          "bonferroni_percentile_lo95": -0.49928420782089233,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 0.9673101634491827,
+          "max_t_hi95": 0.2268628412848307,
+          "max_t_lo95": -0.4488700097436117,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.15100750000000002,
+          "point_left_minus_right": -0.1110035842293905,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.3360953629016876,
+          "bonferroni_percentile_lo95": -0.3529764711856842,
+          "bonferroni_percentile_resolved": false,
+          "left": "GPST",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.34102092544237794,
+          "max_t_lo95": -0.3126875921090442,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.564615,
+          "point_left_minus_right": 0.014166666666666883,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.40774768590927124,
+          "bonferroni_percentile_lo95": -0.28161871433258057,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.9997750011249944,
+          "max_t_hi95": 0.3591761488196198,
+          "max_t_lo95": -0.2643847566369232,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.6838624999999999,
+          "point_left_minus_right": 0.047395696091348305,
+          "right": "UNIAUDIO"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.2761285901069641,
+          "bonferroni_percentile_lo95": -0.23064646124839783,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.9861300693496533,
+          "max_t_hi95": 0.3135507730056112,
+          "max_t_lo95": -0.17496493186461282,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.815515,
+          "point_left_minus_right": 0.06929292057049918,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.40900149941444397,
+          "bonferroni_percentile_lo95": -0.19848188757896423,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.8379858100709496,
+          "max_t_hi95": 0.41722781906684425,
+          "max_t_lo95": -0.1570390318814895,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.9148825,
+          "point_left_minus_right": 0.13009439359267738,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.2713988125324249,
+          "bonferroni_percentile_lo95": -0.281100332736969,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.2499145965317393,
+          "max_t_lo95": -0.2484435041209554,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.5038625,
+          "point_left_minus_right": 0.000735546205391957,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.4076088070869446,
+          "bonferroni_percentile_lo95": -0.17903873324394226,
+          "bonferroni_percentile_resolved": false,
+          "left": "NS2",
+          "max_t_adjusted_p": 0.8223708881455593,
+          "max_t_hi95": 0.3977451475634092,
+          "max_t_lo95": -0.1459335533605105,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.9247124999999999,
+          "point_left_minus_right": 0.12590579710144933,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.24843129515647888,
+          "bonferroni_percentile_lo95": -0.32916590571403503,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.29580437927765857,
+          "max_t_lo95": -0.2520099303193568,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.6264525,
+          "point_left_minus_right": 0.02189722447915088,
+          "right": "VALLE"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.38770148158073425,
+          "bonferroni_percentile_lo95": -0.28306639194488525,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 0.9906050469747651,
+          "max_t_hi95": 0.39372977083316196,
+          "max_t_lo95": -0.2283323758305038,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.7996800000000001,
+          "point_left_minus_right": 0.08269869750132908,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.2524043619632721,
+          "bonferroni_percentile_lo95": -0.4163059592247009,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 0.999800000999995,
+          "max_t_hi95": 0.26394537608450264,
+          "max_t_lo95": -0.35726567585641533,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.3272075,
+          "point_left_minus_right": -0.04666014988595635,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.37418562173843384,
+          "bonferroni_percentile_lo95": -0.24883665144443512,
+          "bonferroni_percentile_resolved": false,
+          "left": "UNIAUDIO",
+          "max_t_adjusted_p": 0.9895450522747387,
+          "max_t_hi95": 0.3691111757056882,
+          "max_t_lo95": -0.21209097368548613,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.80263,
+          "point_left_minus_right": 0.07851010101010103,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.32447758316993713,
+          "bonferroni_percentile_lo95": -0.16795207560062408,
+          "bonferroni_percentile_resolved": false,
+          "left": "VALLE",
+          "max_t_adjusted_p": 0.9932750336248318,
+          "max_t_hi95": 0.303602692247108,
+          "max_t_lo95": -0.1819997462027516,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.7764325000000001,
+          "point_left_minus_right": 0.0608014730221782,
+          "right": "SIMPLESPEECH1"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.20018817484378815,
+          "bonferroni_percentile_lo95": -0.26645398139953613,
+          "bonferroni_percentile_resolved": false,
+          "left": "VALLE",
+          "max_t_adjusted_p": 0.9780351098244509,
+          "max_t_hi95": 0.15546620618604023,
+          "max_t_lo95": -0.2925809549162547,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.170655,
+          "point_left_minus_right": -0.06855737436510723,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.3259914517402649,
+          "bonferroni_percentile_lo95": -0.17426837980747223,
+          "bonferroni_percentile_resolved": false,
+          "left": "VALLE",
+          "max_t_adjusted_p": 0.99640001799991,
+          "max_t_hi95": 0.30507123219615706,
+          "max_t_lo95": -0.19184547913425676,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.754035,
+          "point_left_minus_right": 0.05661287653095015,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.17467047274112701,
+          "bonferroni_percentile_lo95": -0.4145239591598511,
+          "bonferroni_percentile_resolved": false,
+          "left": "SIMPLESPEECH1",
+          "max_t_adjusted_p": 0.8328208358958206,
+          "max_t_hi95": 0.15406645392611484,
+          "max_t_lo95": -0.4127841487006857,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.08173,
+          "point_left_minus_right": -0.12935884738728542,
+          "right": "SIMPLESPEECH2"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.301135778427124,
+          "bonferroni_percentile_lo95": -0.28583192825317383,
+          "bonferroni_percentile_resolved": false,
+          "left": "SIMPLESPEECH1",
+          "max_t_adjusted_p": 1.0,
+          "max_t_hi95": 0.27972537350236326,
+          "max_t_lo95": -0.28810256648481936,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.4747075,
+          "point_left_minus_right": -0.004188596491228047,
+          "right": "NS3"
+        },
+        {
+          "bonferroni_percentile_hi95": 0.415908545255661,
+          "bonferroni_percentile_lo95": -0.17885488271713257,
+          "bonferroni_percentile_resolved": false,
+          "left": "SIMPLESPEECH2",
+          "max_t_adjusted_p": 0.8648156759216203,
+          "max_t_hi95": 0.4128959379230349,
+          "max_t_lo95": -0.16255543613092016,
+          "max_t_resolved": false,
+          "p_left_gt_right": 0.909725,
+          "point_left_minus_right": 0.12517025089605738,
+          "right": "NS3"
+        }
+      ],
+      "ranks": {
+        "CLAMTTS": {
+          "hi95": 7.0,
+          "lo95": 1.0,
+          "median": 3.0,
+          "point": 4.0
+        },
+        "GPST": {
+          "hi95": 8.0,
+          "lo95": 1.0,
+          "median": 3.0,
+          "point": 3.0
+        },
+        "NS2": {
+          "hi95": 8.0,
+          "lo95": 2.0,
+          "median": 7.0,
+          "point": 8.0
+        },
+        "NS3": {
+          "hi95": 7.0,
+          "lo95": 1.0,
+          "median": 3.0,
+          "point": 2.0
+        },
+        "SIMPLESPEECH1": {
+          "hi95": 7.0,
+          "lo95": 1.0,
+          "median": 2.0,
+          "point": 1.0
+        },
+        "SIMPLESPEECH2": {
+          "hi95": 8.0,
+          "lo95": 2.0,
+          "median": 7.0,
+          "point": 7.0
+        },
+        "UNIAUDIO": {
+          "hi95": 8.0,
+          "lo95": 1.0,
+          "median": 6.0,
+          "point": 6.0
+        },
+        "VALLE": {
+          "hi95": 8.0,
+          "lo95": 1.0,
+          "median": 5.0,
+          "point": 5.0
+        }
+      }
+    }
+  }
+}

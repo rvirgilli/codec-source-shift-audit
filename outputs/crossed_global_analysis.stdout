@@ -1,0 +1,966 @@
+{
+  "budget_composition_factorial": {
+    "NS3": {
+      "budget_hash1000_minus_hash558": {
+        "bootstrap_probability_positive": 0.993955,
+        "bootstrap_se": 0.04187930844981826,
+        "ci95_bonferroni_percentile": [
+          0.004791666666666676,
+          0.21250000000000002
+        ],
+        "ci95_max_t": [
+          -0.0037499999999999756,
+          0.2033333333333333
+        ],
+        "ci95_percentile": [
+          0.02270833333333333,
+          0.18854166666666666
+        ],
+        "point": 0.09979166666666667
+      },
+      "composition_bal558_minus_hash558": {
+        "bootstrap_probability_positive": 0.253885,
+        "bootstrap_se": 0.07134641796908084,
+        "ci95_bonferroni_percentile": [
+          -0.23840451388888892,
+          0.10583333333333333
+        ],
+        "ci95_max_t": [
+          -0.22208786681965126,
+          0.1241712001529846
+        ],
+        "ci95_percentile": [
+          -0.19937500000000002,
+          0.08041666666666666
+        ],
+        "point": -0.04895833333333333
+      },
+      "composition_minus_budget": {
+        "bootstrap_probability_positive": 0.012755,
+        "bootstrap_se": 0.07414898278801778,
+        "ci95_bonferroni_percentile": [
+          -0.3444461805555556,
+          0.008541666666666666
+        ],
+        "ci95_max_t": [
+          -0.3327083333333334,
+          0.0352083333333334
+        ],
+        "ci95_percentile": [
+          -0.30500000000000005,
+          -0.015625
+        ],
+        "point": -0.14875
+      }
+    },
+    "SIMPLESPEECH1": {
+      "budget_hash1000_minus_hash558": {
+        "bootstrap_probability_positive": 0.99683,
+        "bootstrap_se": 0.05821317138648561,
+        "ci95_bonferroni_percentile": [
+          0.022697368421052647,
+          0.31513157894736843
+        ],
+        "ci95_max_t": [
+          0.01923267222437025,
+          0.307083117249314
+        ],
+        "ci95_percentile": [
+          0.05065789473684212,
+          0.28223684210526323
+        ],
+        "point": 0.1631578947368421
+      },
+      "composition_bal558_minus_hash558": {
+        "bootstrap_probability_positive": 0.98317,
+        "bootstrap_se": 0.07473983606612383,
+        "ci95_bonferroni_percentile": [
+          -0.02171052631578945,
+          0.3486842105263158
+        ],
+        "ci95_max_t": [
+          -0.024127174748119457,
+          0.3386008589586458
+        ],
+        "ci95_percentile": [
+          0.012171052631578947,
+          0.3088815789473684
+        ],
+        "point": 0.15723684210526315
+      },
+      "composition_minus_budget": {
+        "bootstrap_probability_positive": 0.427925,
+        "bootstrap_se": 0.052723015592136546,
+        "ci95_bonferroni_percentile": [
+          -0.12763157894736843,
+          0.14309210526315788
+        ],
+        "ci95_max_t": [
+          -0.13672309079796893,
+          0.12488098553481104
+        ],
+        "ci95_percentile": [
+          -0.10328947368421051,
+          0.10823190789473497
+        ],
+        "point": -0.0059210526315789476
+      }
+    },
+    "SIMPLESPEECH2": {
+      "budget_hash1000_minus_hash558": {
+        "bootstrap_probability_positive": 0.931995,
+        "bootstrap_se": 0.07527595843090601,
+        "ci95_bonferroni_percentile": [
+          -0.07275985663082435,
+          0.29749103942652333
+        ],
+        "ci95_max_t": [
+          -0.07750880698225408,
+          0.2947131080575229
+        ],
+        "ci95_percentile": [
+          -0.03691756272401432,
+          0.26093189964157704
+        ],
+        "point": 0.1086021505376344
+      },
+      "composition_bal558_minus_hash558": {
+        "bootstrap_probability_positive": 0.99989,
+        "bootstrap_se": 0.07042051100011654,
+        "ci95_bonferroni_percentile": [
+          0.06487455197132616,
+          0.4003584229390681
+        ],
+        "ci95_max_t": [
+          0.03736100405942808,
+          0.3791264511377045
+        ],
+        "ci95_percentile": [
+          0.08637992831541218,
+          0.3605734767025089
+        ],
+        "point": 0.2082437275985663
+      },
+      "composition_minus_budget": {
+        "bootstrap_probability_positive": 0.965935,
+        "bootstrap_se": 0.0613698567613134,
+        "ci95_bonferroni_percentile": [
+          -0.03440860215053762,
+          0.27060931899641577
+        ],
+        "ci95_max_t": [
+          -0.0526126568102563,
+          0.2518958109321201
+        ],
+        "ci95_percentile": [
+          -0.007526881720430076,
+          0.23333333333333334
+        ],
+        "point": 0.0996415770609319
+      }
+    }
+  },
+  "budget_composition_families": {
+    "budget_hash1000_minus_hash558": {
+      "global_max_t_p": 0.024104879475602622,
+      "max_t_critical": 2.472382436561402
+    },
+    "composition_bal558_minus_hash558": {
+      "global_max_t_p": 0.015099924500377499,
+      "max_t_critical": 2.4266044240839992
+    },
+    "composition_minus_budget": {
+      "global_max_t_p": 0.12791436042819787,
+      "max_t_critical": 2.4809286171767404
+    }
+  },
+  "fixed_source_macros": {
+    "all_8_fixed_sources": {
+      "bootstrap_probability_positive": 0.924035,
+      "bootstrap_se": 0.056709839806551025,
+      "ci95_percentile": [
+        -0.02647382247225873,
+        0.19506113433788064
+      ],
+      "point": 0.07991601567125592
+    },
+    "excluding_SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.83,
+      "bootstrap_se": 0.06384338541296675,
+      "ci95_percentile": [
+        -0.05941469450303345,
+        0.18959694093566665
+      ],
+      "point": 0.061583485395925876
+    },
+    "excluding_both_SIMPLESPEECH_sources": {
+      "bootstrap_probability_positive": 0.749545,
+      "bootstrap_se": 0.0665402926098628,
+      "ci95_percentile": [
+        -0.08210484751877792,
+        0.17789444690855455
+      ],
+      "point": 0.04564125927770299
+    }
+  },
+  "fold_counts_after_collision_exclusions": {
+    "CLAMTTS": {
+      "bonafide": 34,
+      "spoof": 78,
+      "total": 112
+    },
+    "GPST": {
+      "bonafide": 10,
+      "spoof": 30,
+      "total": 40
+    },
+    "NS2": {
+      "bonafide": 15,
+      "spoof": 23,
+      "total": 38
+    },
+    "NS3": {
+      "bonafide": 30,
+      "spoof": 32,
+      "total": 62
+    },
+    "SIMPLESPEECH1": {
+      "bonafide": 19,
+      "spoof": 32,
+      "total": 51
+    },
+    "SIMPLESPEECH2": {
+      "bonafide": 18,
+      "spoof": 31,
+      "total": 49
+    },
+    "UNIAUDIO": {
+      "bonafide": 9,
+      "spoof": 11,
+      "total": 20
+    },
+    "VALLE": {
+      "bonafide": 53,
+      "spoof": 57,
+      "total": 110
+    }
+  },
+  "leave_one_source_out_macros": {
+    "CLAMTTS": {
+      "bootstrap_probability_positive": 0.93322,
+      "bootstrap_se": 0.05840071941313838,
+      "ci95_percentile": [
+        -0.02501984692398319,
+        0.20350823235951118
+      ],
+      "point": 0.0862797989916702
+    },
+    "GPST": {
+      "bootstrap_probability_positive": 0.96321,
+      "bootstrap_se": 0.055369109410713276,
+      "ci95_percentile": [
+        -0.006756622431855159,
+        0.20775791028340795
+      ],
+      "point": 0.09018973219572106
+    },
+    "NS2": {
+      "bootstrap_probability_positive": 0.93519,
+      "bootstrap_se": 0.05498700539171751,
+      "ci95_percentile": [
+        -0.022740677383493373,
+        0.19229967375995202
+      ],
+      "point": 0.08238848995969619
+    },
+    "NS3": {
+      "bootstrap_probability_positive": 0.95942,
+      "bootstrap_se": 0.059664224680115965,
+      "ci95_percentile": [
+        -0.01069973440933791,
+        0.22210617769368401
+      ],
+      "point": 0.09832663695762582
+    },
+    "SIMPLESPEECH1": {
+      "bootstrap_probability_positive": 0.884235,
+      "bootstrap_se": 0.05785603739999363,
+      "ci95_percentile": [
+        -0.04097569362196156,
+        0.18526842556409334
+      ],
+      "point": 0.0688701833235406
+    },
+    "SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.83,
+      "bootstrap_se": 0.06384338541296675,
+      "ci95_percentile": [
+        -0.05941469450303345,
+        0.18959694093566665
+      ],
+      "point": 0.061583485395925876
+    },
+    "UNIAUDIO": {
+      "bootstrap_probability_positive": 0.91748,
+      "bootstrap_se": 0.05622552261050648,
+      "ci95_percentile": [
+        -0.03206728698127033,
+        0.1882840300736544
+      ],
+      "point": 0.07834557635156521
+    },
+    "VALLE": {
+      "bootstrap_probability_positive": 0.905045,
+      "bootstrap_se": 0.05648687393036073,
+      "ci95_percentile": [
+        -0.03427557338487909,
+        0.18678690749904472
+      ],
+      "point": 0.07334422219430241
+    }
+  },
+  "method": {
+    "auroc": "tie-correct Mann-Whitney; 0.5 credit for equal scores",
+    "bonferroni_family_size": 8,
+    "bootstrap_replicates": 200000,
+    "ci": "percentile crossed bootstrap",
+    "class_stratified_item_draw_shared_across_seeds_and_arms_within_fold": true,
+    "cross_fold_items_overlap": false,
+    "folds_are_fixed": true,
+    "max_t": "single-step centered bootstrap, fixed bootstrap-SD studentization",
+    "rng_seed": 20260711,
+    "seed_draw_shared_across_folds_and_arms": true,
+    "seed_ids": [
+      7,
+      11,
+      17,
+      29,
+      31
+    ]
+  },
+  "pairwise_effect_heterogeneity": {
+    "CLAMTTS_minus_GPST": {
+      "bootstrap_probability_positive": 0.580825,
+      "bootstrap_se": 0.15682523463844542,
+      "ci95_bonferroni_percentile": [
+        -0.49813088504632624,
+        0.49102198071536635
+      ],
+      "ci95_max_t": [
+        -0.4555969503968866,
+        0.5103360152535985
+      ],
+      "ci95_percentile": [
+        -0.29334547511312214,
+        0.3211862745098038
+      ],
+      "point": 0.027369532428355957
+    },
+    "CLAMTTS_minus_NS2": {
+      "bootstrap_probability_positive": 0.402915,
+      "bootstrap_se": 0.09503981750573198,
+      "ci95_bonferroni_percentile": [
+        -0.3835251808081092,
+        0.25921196120588735
+      ],
+      "ci95_max_t": [
+        -0.3199283244734079,
+        0.26544999802577196
+      ],
+      "ci95_percentile": [
+        -0.228293707784117,
+        0.1476190078037904
+      ],
+      "point": -0.02723916322381796
+    },
+    "CLAMTTS_minus_NS3": {
+      "bootstrap_probability_positive": 0.880855,
+      "bootstrap_se": 0.07233449199833025,
+      "ci95_bonferroni_percentile": [
+        -0.14388293875242403,
+        0.32026568307611686
+      ],
+      "ci95_max_t": [
+        -0.13843689061138914,
+        0.30709262213476773
+      ],
+      "ci95_percentile": [
+        -0.056203219268476635,
+        0.2292422464177978
+      ],
+      "point": 0.0843278657616893
+    },
+    "CLAMTTS_minus_SIMPLESPEECH1": {
+      "bootstrap_probability_positive": 0.03766,
+      "bootstrap_se": 0.06972973876440024,
+      "ci95_bonferroni_percentile": [
+        -0.37001748396727113,
+        0.09835460797426444
+      ],
+      "ci95_max_t": [
+        -0.33661034358345093,
+        0.09287572422963657
+      ],
+      "ci95_percentile": [
+        -0.26323610036119705,
+        0.012298228248789332
+      ],
+      "point": -0.12186730967690719
+    },
+    "CLAMTTS_minus_SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.02553,
+      "bootstrap_se": 0.0953594659091985,
+      "ci95_bonferroni_percentile": [
+        -0.5240369446993024,
+        0.09615658587670255
+      ],
+      "ci95_max_t": [
+        -0.46654776091005223,
+        0.12079937056963153
+      ],
+      "ci95_percentile": [
+        -0.3737785846348465,
+        0.0008425574530887932
+      ],
+      "point": -0.17287419517021035
+    },
+    "CLAMTTS_minus_UNIAUDIO": {
+      "bootstrap_probability_positive": 0.30731,
+      "bootstrap_se": 0.11163756914201413,
+      "ci95_bonferroni_percentile": [
+        -0.437263892153598,
+        0.30908744849921516
+      ],
+      "ci95_max_t": [
+        -0.39934394840549975,
+        0.28826483144402987
+      ],
+      "ci95_percentile": [
+        -0.28304332921979974,
+        0.16016111339640732
+      ],
+      "point": -0.055539558480734955
+    },
+    "CLAMTTS_minus_VALLE": {
+      "bootstrap_probability_positive": 0.07607,
+      "bootstrap_se": 0.06294357335523593,
+      "ci95_bonferroni_percentile": [
+        -0.2927480487267858,
+        0.13566355465683524
+      ],
+      "ci95_max_t": [
+        -0.28439307237556893,
+        0.1032949972124199
+      ],
+      "ci95_percentile": [
+        -0.20988572076909595,
+        0.038715864888465415
+      ],
+      "point": -0.09054903758157452
+    },
+    "GPST_minus_NS2": {
+      "bootstrap_probability_positive": 0.34191,
+      "bootstrap_se": 0.16626151418219598,
+      "ci95_bonferroni_percentile": [
+        -0.46050556418219457,
+        0.5584555900621134
+      ],
+      "ci95_max_t": [
+        -0.5666355956526766,
+        0.45741820434832875
+      ],
+      "ci95_percentile": [
+        -0.333681884057971,
+        0.3097971014492754
+      ],
+      "point": -0.05460869565217392
+    },
+    "GPST_minus_NS3": {
+      "bootstrap_probability_positive": 0.650195,
+      "bootstrap_se": 0.14992782885496014,
+      "ci95_bonferroni_percentile": [
+        -0.4208811383928571,
+        0.5270416666666666
+      ],
+      "ci95_max_t": [
+        -0.40476656920957077,
+        0.5186832358762374
+      ],
+      "ci95_percentile": [
+        -0.23866770833333334,
+        0.3519593749999998
+      ],
+      "point": 0.05695833333333333
+    },
+    "GPST_minus_SIMPLESPEECH1": {
+      "bootstrap_probability_positive": 0.176715,
+      "bootstrap_se": 0.16218094915805364,
+      "ci95_bonferroni_percentile": [
+        -0.6093867755325815,
+        0.42086912202381066
+      ],
+      "ci95_max_t": [
+        -0.6486970391628857,
+        0.35022335495235934
+      ],
+      "ci95_percentile": [
+        -0.4493428728070175,
+        0.1870308114035088
+      ],
+      "point": -0.14923684210526314
+    },
+    "GPST_minus_SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.142,
+      "bootstrap_se": 0.18568356584274204,
+      "ci95_bonferroni_percentile": [
+        -0.7290968637992831,
+        0.426717901945725
+      ],
+      "ci95_max_t": [
+        -0.7720837055222132,
+        0.37159625032508065
+      ],
+      "ci95_percentile": [
+        -0.5417064516129032,
+        0.18333422939068075
+      ],
+      "point": -0.2002437275985663
+    },
+    "GPST_minus_UNIAUDIO": {
+      "bootstrap_probability_positive": 0.343565,
+      "bootstrap_se": 0.2110181176944324,
+      "ci95_bonferroni_percentile": [
+        -0.7111489177489178,
+        0.6068774891774913
+      ],
+      "ci95_max_t": [
+        -0.7327705647353239,
+        0.566952382917142
+      ],
+      "ci95_percentile": [
+        -0.48701060606060614,
+        0.3382025252525252
+      ],
+      "point": -0.0829090909090909
+    },
+    "GPST_minus_VALLE": {
+      "bootstrap_probability_positive": 0.243345,
+      "bootstrap_se": 0.16999544836610447,
+      "ci95_bonferroni_percentile": [
+        -0.6028275866553175,
+        0.42935186078404103
+      ],
+      "ci95_max_t": [
+        -0.6414446720620703,
+        0.40560753204220945
+      ],
+      "ci95_percentile": [
+        -0.4387640847401522,
+        0.22417158225753028
+      ],
+      "point": -0.11791857000993047
+    },
+    "NS2_minus_NS3": {
+      "bootstrap_probability_positive": 0.822605,
+      "bootstrap_se": 0.11949008292164723,
+      "ci95_bonferroni_percentile": [
+        -0.2270925045289855,
+        0.5112141644021797
+      ],
+      "ci95_max_t": [
+        -0.2564203374240648,
+        0.47955439539507927
+      ],
+      "ci95_percentile": [
+        -0.11445697463768116,
+        0.35415760869565216
+      ],
+      "point": 0.11156702898550724
+    },
+    "NS2_minus_SIMPLESPEECH1": {
+      "bootstrap_probability_positive": 0.13844,
+      "bootstrap_se": 0.0888487445595211,
+      "ci95_bonferroni_percentile": [
+        -0.37508394968399256,
+        0.22946884449575325
+      ],
+      "ci95_max_t": [
+        -0.36825098376163845,
+        0.17899469085545996
+      ],
+      "ci95_percentile": [
+        -0.26383793382913806,
+        0.08728365751334859
+      ],
+      "point": -0.09462814645308923
+    },
+    "NS2_minus_SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.07872,
+      "bootstrap_se": 0.1028248808984733,
+      "ci95_bonferroni_percentile": [
+        -0.47235254291057244,
+        0.2217677374830267
+      ],
+      "ci95_max_t": [
+        -0.4622994462477787,
+        0.17102938235499393
+      ],
+      "ci95_percentile": [
+        -0.3418450989558984,
+        0.0650803334891694
+      ],
+      "point": -0.14563503194639238
+    },
+    "NS2_minus_UNIAUDIO": {
+      "bootstrap_probability_positive": 0.404335,
+      "bootstrap_se": 0.13332478134853773,
+      "ci95_bonferroni_percentile": [
+        -0.4538253184014054,
+        0.44806153146371736
+      ],
+      "ci95_max_t": [
+        -0.43889375971002487,
+        0.3822929691961908
+      ],
+      "ci95_percentile": [
+        -0.28674615722441804,
+        0.2433201581027668
+      ],
+      "point": -0.028300395256916994
+    },
+    "NS2_minus_VALLE": {
+      "bootstrap_probability_positive": 0.2727,
+      "bootstrap_se": 0.11134252276592248,
+      "ci95_bonferroni_percentile": [
+        -0.35289242795257214,
+        0.33988892144224486
+      ],
+      "ci95_max_t": [
+        -0.4062056253708062,
+        0.2795858766552931
+      ],
+      "ci95_percentile": [
+        -0.2585750327418217,
+        0.17332125843731552
+      ],
+      "point": -0.06330987435775656
+    },
+    "SIMPLESPEECH1_minus_NS3": {
+      "bootstrap_probability_positive": 0.988835,
+      "bootstrap_se": 0.08919962680807528,
+      "ci95_bonferroni_percentile": [
+        -0.08380327772556394,
+        0.4973654644423585
+      ],
+      "ci95_max_t": [
+        -0.06850825560131954,
+        0.48089860647851246
+      ],
+      "ci95_percentile": [
+        0.03018640350877192,
+        0.38199616228070166
+      ],
+      "point": 0.20619517543859647
+    },
+    "SIMPLESPEECH1_minus_SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.29574,
+      "bootstrap_se": 0.0950470458356385,
+      "ci95_bonferroni_percentile": [
+        -0.3871395548262456,
+        0.24652398806155804
+      ],
+      "ci95_max_t": [
+        -0.34371830745290954,
+        0.24170453646630322
+      ],
+      "ci95_percentile": [
+        -0.2462840148085267,
+        0.12870808573853995
+      ],
+      "point": -0.05100688549330315
+    },
+    "SIMPLESPEECH2_minus_NS3": {
+      "bootstrap_probability_positive": 0.993735,
+      "bootstrap_se": 0.11111431425982006,
+      "ci95_bonferroni_percentile": [
+        -0.059490855414746566,
+        0.6372119835669482
+      ],
+      "ci95_max_t": [
+        -0.08499088826613993,
+        0.5993950101299392
+      ],
+      "ci95_percentile": [
+        0.05198471102150537,
+        0.48790104166666665
+      ],
+      "point": 0.2572020609318996
+    },
+    "UNIAUDIO_minus_NS3": {
+      "bootstrap_probability_positive": 0.863065,
+      "bootstrap_se": 0.13094855158607635,
+      "ci95_bonferroni_percentile": [
+        -0.2816162010732324,
+        0.5900983382936513
+      ],
+      "ci95_max_t": [
+        -0.2634079895415484,
+        0.543142838026397
+      ],
+      "ci95_percentile": [
+        -0.11017077020202021,
+        0.40670470328282826
+      ],
+      "point": 0.13986742424242424
+    },
+    "UNIAUDIO_minus_SIMPLESPEECH1": {
+      "bootstrap_probability_positive": 0.280735,
+      "bootstrap_se": 0.11957931216451598,
+      "ci95_bonferroni_percentile": [
+        -0.46350969457260577,
+        0.338151747740571
+      ],
+      "ci95_max_t": [
+        -0.43458991224381954,
+        0.30193440985147507
+      ],
+      "ci95_percentile": [
+        -0.2988903010366826,
+        0.17466108452950557
+      ],
+      "point": -0.06632775119617224
+    },
+    "UNIAUDIO_minus_SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.189395,
+      "bootstrap_se": 0.13806199111019213,
+      "ci95_bonferroni_percentile": [
+        -0.5877858364753527,
+        0.34208481706466143
+      ],
+      "ci95_max_t": [
+        -0.5425169385815538,
+        0.307847665202603
+      ],
+      "ci95_percentile": [
+        -0.3951124144672531,
+        0.1532420984033887
+      ],
+      "point": -0.11733463668947539
+    },
+    "UNIAUDIO_minus_VALLE": {
+      "bootstrap_probability_positive": 0.366155,
+      "bootstrap_se": 0.10995806725648571,
+      "ci95_bonferroni_percentile": [
+        -0.4029631468608628,
+        0.3419747965539933
+      ],
+      "ci95_max_t": [
+        -0.37364159480313774,
+        0.3036226366014586
+      ],
+      "ci95_percentile": [
+        -0.24928340003811705,
+        0.18587097388984178
+      ],
+      "point": -0.03500947910083957
+    },
+    "VALLE_minus_NS3": {
+      "bootstrap_probability_positive": 0.99309,
+      "bootstrap_se": 0.06983508488886837,
+      "ci95_bonferroni_percentile": [
+        -0.04827519399176005,
+        0.4099125705256659
+      ],
+      "ci95_max_t": [
+        -0.04019055951969949,
+        0.3899443662062271
+      ],
+      "ci95_percentile": [
+        0.03733816410129096,
+        0.3133978246027805
+      ],
+      "point": 0.1748769033432638
+    },
+    "VALLE_minus_SIMPLESPEECH1": {
+      "bootstrap_probability_positive": 0.354625,
+      "bootstrap_se": 0.082808913251099,
+      "ci95_bonferroni_percentile": [
+        -0.33243519138352956,
+        0.22936624247824866
+      ],
+      "ci95_max_t": [
+        -0.28634055643413053,
+        0.2237040122434652
+      ],
+      "ci95_percentile": [
+        -0.20075347567030785,
+        0.12714131289308175
+      ],
+      "point": -0.03131827209533267
+    },
+    "VALLE_minus_SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.248175,
+      "bootstrap_se": 0.11758891689049214,
+      "ci95_bonferroni_percentile": [
+        -0.494140298186631,
+        0.24373022260713784
+      ],
+      "ci95_max_t": [
+        -0.4444576022858274,
+        0.27980728710855585
+      ],
+      "ci95_percentile": [
+        -0.3300157054738692,
+        0.1301605339683149
+      ],
+      "point": -0.08232515758863582
+    }
+  },
+  "pairwise_family": {
+    "global_max_t_p_any_pair_differs": 0.17236913815430924,
+    "max_t_critical": 3.0796477616546016
+  },
+  "recipe_balanced_minus_hash": {
+    "CLAMTTS": {
+      "bootstrap_probability_positive": 0.71042,
+      "bootstrap_se": 0.06320753928114904,
+      "ci95_bonferroni_percentile": [
+        -0.13823552978883866,
+        0.2261691647812963
+      ],
+      "ci95_max_t": [
+        -0.14058416751119468,
+        0.21132323236790662
+      ],
+      "ci95_percentile": [
+        -0.08469079939668177,
+        0.165158371040724
+      ],
+      "point": 0.03536953242835596
+    },
+    "GPST": {
+      "bootstrap_probability_positive": 0.51425,
+      "bootstrap_se": 0.1623711678975287,
+      "ci95_bonferroni_percentile": [
+        -0.4306666666666667,
+        0.46266666666666667
+      ],
+      "ci95_max_t": [
+        -0.44400000000000006,
+        0.4600000000000001
+      ],
+      "ci95_percentile": [
+        -0.306,
+        0.33333333333333337
+      ],
+      "point": 0.008
+    },
+    "NS2": {
+      "bootstrap_probability_positive": 0.719345,
+      "bootstrap_se": 0.10507581277583024,
+      "ci95_bonferroni_percentile": [
+        -0.2139130434782609,
+        0.37913043478260866
+      ],
+      "ci95_max_t": [
+        -0.22989562016729065,
+        0.3551130114716385
+      ],
+      "ci95_percentile": [
+        -0.13391304347826088,
+        0.2794202898550725
+      ],
+      "point": 0.06260869565217392
+    },
+    "NS3": {
+      "bootstrap_probability_positive": 0.25244,
+      "bootstrap_se": 0.07144746078743343,
+      "ci95_bonferroni_percentile": [
+        -0.2681256510416667,
+        0.12645833333333334
+      ],
+      "ci95_max_t": [
+        -0.24784987728218344,
+        0.1499332106155168
+      ],
+      "ci95_percentile": [
+        -0.2,
+        0.08000000000000002
+      ],
+      "point": -0.04895833333333333
+    },
+    "SIMPLESPEECH1": {
+      "bootstrap_probability_positive": 0.982855,
+      "bootstrap_se": 0.07467616809537479,
+      "ci95_bonferroni_percentile": [
+        -0.04868421052631577,
+        0.38256578947368414
+      ],
+      "ci95_max_t": [
+        -0.05064260112449412,
+        0.3651162853350204
+      ],
+      "ci95_percentile": [
+        0.012171052631578937,
+        0.3082236842105263
+      ],
+      "point": 0.15723684210526315
+    },
+    "SIMPLESPEECH2": {
+      "bootstrap_probability_positive": 0.99988,
+      "bootstrap_se": 0.07024330980832921,
+      "ci95_bonferroni_percentile": [
+        0.04838709677419355,
+        0.432258064516129
+      ],
+      "ci95_max_t": [
+        0.012704233460048536,
+        0.40378322173708403
+      ],
+      "ci95_percentile": [
+        0.08637992831541218,
+        0.36057347670250894
+      ],
+      "point": 0.2082437275985663
+    },
+    "UNIAUDIO": {
+      "bootstrap_probability_positive": 0.771335,
+      "bootstrap_se": 0.12438991639218709,
+      "ci95_bonferroni_percentile": [
+        -0.24040404040404034,
+        0.47878787878787876
+      ],
+      "ci95_max_t": [
+        -0.25536077299155224,
+        0.437178954809734
+      ],
+      "ci95_percentile": [
+        -0.1414141414141414,
+        0.35151515151515156
+      ],
+      "point": 0.09090909090909091
+    },
+    "VALLE": {
+      "bootstrap_probability_positive": 0.927895,
+      "bootstrap_se": 0.08652870141677865,
+      "ci95_bonferroni_percentile": [
+        -0.106454816285998,
+        0.3696791211519356
+      ],
+      "ci95_max_t": [
+        -0.11495530893551936,
+        0.3667924489553803
+      ],
+      "ci95_percentile": [
+        -0.04157563720622311,
+        0.2970539556438265
+      ],
+      "point": 0.12591857000993048
+    }
+  },
+  "recipe_family": {
+    "global_max_t_p_any_effect_nonzero": 0.03260983695081525,
+    "max_t_critical": 2.7837454509486808
+  }
+}
+wrote /tmp/codec-source-shift-audit-root/outputs/crossed_global_analysis.json

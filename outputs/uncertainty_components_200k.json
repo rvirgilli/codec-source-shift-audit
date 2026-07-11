@@ -1,0 +1,302 @@
+{
+  "folds": {
+    "CLAMTTS": {
+      "crossed": {
+        "bootstrap_se": 0.06320753928114904,
+        "ci95_percentile": [
+          -0.08469079939668177,
+          0.165158371040724
+        ],
+        "point": 0.03536953242835596
+      },
+      "item_only": {
+        "bootstrap_se": 0.03291444551844123,
+        "ci95_percentile": [
+          -0.02933634992458522,
+          0.0993966817496229
+        ],
+        "point": 0.03536953242835596
+      },
+      "item_se_exceeds_seed_se": false,
+      "se_ratios": {
+        "crossed_over_item": 1.9203586232596648,
+        "crossed_over_seed": 1.2516112282486893,
+        "item_over_seed": 0.6517591105583045
+      },
+      "seed_only": {
+        "bootstrap_se": 0.050500936596415705,
+        "ci95_percentile": [
+          -0.052941176470588235,
+          0.1418552036199095
+        ],
+        "point": 0.03536953242835596
+      }
+    },
+    "GPST": {
+      "crossed": {
+        "bootstrap_se": 0.1623711678975287,
+        "ci95_percentile": [
+          -0.306,
+          0.33333333333333337
+        ],
+        "point": 0.008
+      },
+      "item_only": {
+        "bootstrap_se": 0.05092197399636799,
+        "ci95_percentile": [
+          -0.10066666666666667,
+          0.09866666666666665
+        ],
+        "point": 0.008
+      },
+      "item_se_exceeds_seed_se": false,
+      "se_ratios": {
+        "crossed_over_item": 3.1886267391973027,
+        "crossed_over_seed": 1.0809988168614098,
+        "item_over_seed": 0.33901704566823576
+      },
+      "seed_only": {
+        "bootstrap_se": 0.150204760046787,
+        "ci95_percentile": [
+          -0.264,
+          0.30733333333333335
+        ],
+        "point": 0.008
+      }
+    },
+    "NS2": {
+      "crossed": {
+        "bootstrap_se": 0.10507581277583024,
+        "ci95_percentile": [
+          -0.13391304347826088,
+          0.2794202898550725
+        ],
+        "point": 0.06260869565217392
+      },
+      "item_only": {
+        "bootstrap_se": 0.03273051992030706,
+        "ci95_percentile": [
+          -0.0023188405797101488,
+          0.12637681159420291
+        ],
+        "point": 0.06260869565217392
+      },
+      "item_se_exceeds_seed_se": false,
+      "se_ratios": {
+        "crossed_over_item": 3.2103313064280976,
+        "crossed_over_seed": 1.092681564954173,
+        "item_over_seed": 0.34036411219187235
+      },
+      "seed_only": {
+        "bootstrap_se": 0.09616325208180583,
+        "ci95_percentile": [
+          -0.11246376811594203,
+          0.26956521739130435
+        ],
+        "point": 0.06260869565217392
+      }
+    },
+    "NS3": {
+      "crossed": {
+        "bootstrap_se": 0.07144746078743343,
+        "ci95_percentile": [
+          -0.2,
+          0.08000000000000002
+        ],
+        "point": -0.04895833333333333
+      },
+      "item_only": {
+        "bootstrap_se": 0.033037133366009934,
+        "ci95_percentile": [
+          -0.11395833333333333,
+          0.015625000000000007
+        ],
+        "point": -0.04895833333333333
+      },
+      "item_se_exceeds_seed_se": false,
+      "se_ratios": {
+        "crossed_over_item": 2.162641049872134,
+        "crossed_over_seed": 1.2113292520140313,
+        "item_over_seed": 0.5601157215089629
+      },
+      "seed_only": {
+        "bootstrap_se": 0.05898269249969852,
+        "ci95_percentile": [
+          -0.16270833333333334,
+          0.06479166666666668
+        ],
+        "point": -0.04895833333333333
+      }
+    },
+    "SIMPLESPEECH1": {
+      "crossed": {
+        "bootstrap_se": 0.07467616809537479,
+        "ci95_percentile": [
+          0.012171052631578937,
+          0.3082236842105263
+        ],
+        "point": 0.15723684210526315
+      },
+      "item_only": {
+        "bootstrap_se": 0.04427752741709158,
+        "ci95_percentile": [
+          0.06710526315789475,
+          0.24078947368421055
+        ],
+        "point": 0.15723684210526315
+      },
+      "item_se_exceeds_seed_se": false,
+      "se_ratios": {
+        "crossed_over_item": 1.6865478370535438,
+        "crossed_over_seed": 1.458083488476999,
+        "item_over_seed": 0.864537285241977
+      },
+      "seed_only": {
+        "bootstrap_se": 0.05121528958082896,
+        "ci95_percentile": [
+          0.07236842105263158,
+          0.27499999999999997
+        ],
+        "point": 0.15723684210526315
+      }
+    },
+    "SIMPLESPEECH2": {
+      "crossed": {
+        "bootstrap_se": 0.07024330980832921,
+        "ci95_percentile": [
+          0.08637992831541218,
+          0.36057347670250894
+        ],
+        "point": 0.2082437275985663
+      },
+      "item_only": {
+        "bootstrap_se": 0.05308421177597352,
+        "ci95_percentile": [
+          0.1103942652329749,
+          0.317921146953405
+        ],
+        "point": 0.2082437275985663
+      },
+      "item_se_exceeds_seed_se": true,
+      "se_ratios": {
+        "crossed_over_item": 1.323242965437081,
+        "crossed_over_seed": 1.726006149644454,
+        "item_over_seed": 1.3043758362806306
+      },
+      "seed_only": {
+        "bootstrap_se": 0.04069702174745952,
+        "ci95_percentile": [
+          0.13261648745519714,
+          0.2867383512544803
+        ],
+        "point": 0.2082437275985663
+      }
+    },
+    "UNIAUDIO": {
+      "crossed": {
+        "bootstrap_se": 0.12438991639218709,
+        "ci95_percentile": [
+          -0.1414141414141414,
+          0.35151515151515156
+        ],
+        "point": 0.09090909090909091
+      },
+      "item_only": {
+        "bootstrap_se": 0.07854757731690162,
+        "ci95_percentile": [
+          -0.06666666666666667,
+          0.24040404040404045
+        ],
+        "point": 0.09090909090909091
+      },
+      "item_se_exceeds_seed_se": false,
+      "se_ratios": {
+        "crossed_over_item": 1.5836251179375491,
+        "crossed_over_seed": 1.5556019133243741,
+        "item_over_seed": 0.9823043949633287
+      },
+      "seed_only": {
+        "bootstrap_se": 0.07996256325396361,
+        "ci95_percentile": [
+          -0.044444444444444446,
+          0.2626262626262626
+        ],
+        "point": 0.09090909090909091
+      }
+    },
+    "VALLE": {
+      "crossed": {
+        "bootstrap_se": 0.08652870141677865,
+        "ci95_percentile": [
+          -0.04157563720622311,
+          0.2970539556438265
+        ],
+        "point": 0.12591857000993048
+      },
+      "item_only": {
+        "bootstrap_se": 0.02325588013969081,
+        "ci95_percentile": [
+          0.08083416087388282,
+          0.1719298245614035
+        ],
+        "point": 0.12591857000993048
+      },
+      "item_se_exceeds_seed_se": false,
+      "se_ratios": {
+        "crossed_over_item": 3.72072357171725,
+        "crossed_over_seed": 1.0661794898367205,
+        "item_over_seed": 0.28655165300136487
+      },
+      "seed_only": {
+        "bootstrap_se": 0.08115772460604176,
+        "ci95_percentile": [
+          -0.032770605759682214,
+          0.2784508440913605
+        ],
+        "point": 0.12591857000993048
+      }
+    }
+  },
+  "macro_all_8_fixed_sources": {
+    "crossed": {
+      "bootstrap_se": 0.056709839806551025,
+      "ci95_percentile": [
+        -0.02647382247225873,
+        0.19506113433788064
+      ],
+      "point": 0.07991601567125592
+    },
+    "item_only": {
+      "bootstrap_se": 0.01648223586198866,
+      "ci95_percentile": [
+        0.04747745882062891,
+        0.11201113743682509
+      ],
+      "point": 0.07991601567125592
+    },
+    "item_se_exceeds_seed_se": false,
+    "se_ratios": {
+      "crossed_over_item": 3.440664257046296,
+      "crossed_over_seed": 1.0653745585202608,
+      "item_over_seed": 0.3096421152800453
+    },
+    "seed_only": {
+      "bootstrap_se": 0.05322995499847254,
+      "ci95_percentile": [
+        -0.02051641660979595,
+        0.19420185136542129
+      ],
+      "point": 0.07991601567125592
+    }
+  },
+  "method": {
+    "bootstrap_replicates": 200000,
+    "crossed": "paired seeds and class-stratified items resampled; both draws shared across arms",
+    "folds_are_fixed": true,
+    "interpretation": "sensitivity decomposition, not additive variance shares",
+    "item_only": "all five seeds fixed; class-stratified item draw shared across seeds and arms",
+    "macro_item_draws_independent_across_disjoint_folds": true,
+    "macro_seed_draw_shared_across_folds": true,
+    "seed_only": "paired seed IDs resampled; all test items fixed"
+  }
+}

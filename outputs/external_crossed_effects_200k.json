@@ -1,0 +1,883 @@
+{
+  "families": {
+    "asvspoof5_wavlm": {
+      "backend": "wavlm_frozen_backend",
+      "corpus": "asvspoof5",
+      "estimable_folds": [
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23",
+        "A24",
+        "A25"
+      ],
+      "folds": {
+        "A17": {
+          "is_reference_fold": true,
+          "missing_files": [
+            "data/crosscorpus/asvspoof5/samp_hash/wavlm_frozen_backend/seed_7/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_hash/wavlm_frozen_backend/seed_42/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_hash/wavlm_frozen_backend/seed_99/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_hash/wavlm_frozen_backend/seed_123/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_hash/wavlm_frozen_backend/seed_2024/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_source-balanced/wavlm_frozen_backend/seed_7/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_source-balanced/wavlm_frozen_backend/seed_42/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_source-balanced/wavlm_frozen_backend/seed_99/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_source-balanced/wavlm_frozen_backend/seed_123/A17.jsonl",
+            "data/crosscorpus/asvspoof5/samp_source-balanced/wavlm_frozen_backend/seed_2024/A17.jsonl"
+          ],
+          "reason": "required sampler cells absent",
+          "status": "not_estimable"
+        },
+        "A18": {
+          "balanced_auc": 0.9243544600938968,
+          "balanced_minus_hash": -0.01789906103286376,
+          "bonafide_items": 48,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.06109154929577465,
+            0.014847417840375588
+          ],
+          "bootstrap_probability_positive": 0.0688375,
+          "bootstrap_se": 0.012985357584570582,
+          "common_ids": 119,
+          "hash_auc": 0.9422535211267605,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.6964715176424118,
+          "max_t_ci95": [
+            -0.059538759393914634,
+            0.02374063732818711
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.045950704225352114,
+            0.005224471830985579
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 71,
+          "status": "estimable",
+          "union_ids": 119
+        },
+        "A19": {
+          "balanced_auc": 0.9920798898071626,
+          "balanced_minus_hash": -0.0014462809917354935,
+          "bonafide_items": 44,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.01487603305785124,
+            0.00743801652892562
+          ],
+          "bootstrap_probability_positive": 0.3578875,
+          "bootstrap_se": 0.0034227605589668897,
+          "common_ids": 110,
+          "hash_auc": 0.993526170798898,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.9997450012749937,
+          "max_t_ci95": [
+            -0.01242192924087043,
+            0.009529367257399442
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.009366391184573004,
+            0.004269972451790635
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 66,
+          "status": "estimable",
+          "union_ids": 110
+        },
+        "A20": {
+          "balanced_auc": 0.9957692307692307,
+          "balanced_minus_hash": 0.00211538461538463,
+          "bonafide_items": 26,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.006923076923076923,
+            0.015769230769230775
+          ],
+          "bootstrap_probability_positive": 0.7766325000000001,
+          "bootstrap_se": 0.0031205884156757673,
+          "common_ids": 66,
+          "hash_auc": 0.9936538461538461,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.9916300418497908,
+          "max_t_ci95": [
+            -0.007891298642389178,
+            0.012122067873158438
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.0028846153846153848,
+            0.009615384615384616
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 40,
+          "status": "estimable",
+          "union_ids": 66
+        },
+        "A21": {
+          "balanced_auc": 0.845748987854251,
+          "balanced_minus_hash": 0.018623481781376516,
+          "bonafide_items": 26,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.05587044534412956,
+            0.08450348627980259
+          ],
+          "bootstrap_probability_positive": 0.7957675,
+          "bootstrap_se": 0.02368232021268134,
+          "common_ids": 64,
+          "hash_auc": 0.8271255060728745,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.9804200978995105,
+          "max_t_ci95": [
+            -0.05731779775008582,
+            0.09456476131283885
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.030364372469635626,
+            0.06376518218623482
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 38,
+          "status": "estimable",
+          "union_ids": 64
+        },
+        "A22": {
+          "balanced_auc": 0.9576216216216217,
+          "balanced_minus_hash": 0.05037837837837844,
+          "bonafide_items": 25,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.005837837837837838,
+            0.14097297297297298
+          ],
+          "bootstrap_probability_positive": 0.9936674999999999,
+          "bootstrap_se": 0.02485853973341561,
+          "common_ids": 62,
+          "hash_auc": 0.9072432432432432,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.3026434867825661,
+          "max_t_ci95": [
+            -0.02933464372780903,
+            0.1300914004845659
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": true,
+          "ordinary_percentile_ci95": [
+            0.009945945945945946,
+            0.10702702702702703
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 37,
+          "status": "estimable",
+          "union_ids": 62
+        },
+        "A23": {
+          "balanced_auc": 0.930952380952381,
+          "balanced_minus_hash": 0.07936507936507942,
+          "bonafide_items": 18,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.04642857142857141,
+            0.24047619047619045
+          ],
+          "bootstrap_probability_positive": 0.9652325,
+          "bootstrap_se": 0.04826531025449435,
+          "common_ids": 46,
+          "hash_auc": 0.8515873015873016,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.5146524267378663,
+          "max_t_ci95": [
+            -0.07540562657895267,
+            0.2341357853091115
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.006349206349206351,
+            0.18412698412698414
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 28,
+          "status": "estimable",
+          "union_ids": 46
+        },
+        "A24": {
+          "balanced_auc": 0.8072916666666666,
+          "balanced_minus_hash": 0.12916666666666665,
+          "bonafide_items": 16,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.03229166666666666,
+            0.3078125
+          ],
+          "bootstrap_probability_positive": 0.9896225000000001,
+          "bootstrap_se": 0.05752746593199658,
+          "common_ids": 40,
+          "hash_auc": 0.678125,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.2173039134804326,
+          "max_t_ci95": [
+            -0.05530467447916773,
+            0.31363800781250106
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": true,
+          "ordinary_percentile_ci95": [
+            0.021874999999999995,
+            0.24895833333333334
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 24,
+          "status": "estimable",
+          "union_ids": 40
+        },
+        "A25": {
+          "balanced_auc": 0.9616666666666667,
+          "balanced_minus_hash": -0.015000000000000013,
+          "bonafide_items": 10,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.09333333333333334,
+            0.025
+          ],
+          "bootstrap_probability_positive": 0.1716625,
+          "bootstrap_se": 0.017873619411104543,
+          "common_ids": 22,
+          "hash_auc": 0.9766666666666667,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.9710501447492762,
+          "max_t_ci95": [
+            -0.0723147189864798,
+            0.042314718986479774
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 10,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.06,
+            0.01
+          ],
+          "seeds": [
+            7,
+            42,
+            99,
+            123,
+            2024
+          ],
+          "spoof_items": 12,
+          "status": "estimable",
+          "union_ids": 22
+        }
+      },
+      "global_max_t_p_any_effect_nonzero": 0.2173039134804326,
+      "max_t_critical": 3.2066655145891287,
+      "max_t_estimable_family_size": 8,
+      "paired_seeds": [
+        7,
+        42,
+        99,
+        123,
+        2024
+      ],
+      "planned_bonferroni_family_size": 9,
+      "planned_folds": [
+        "A17",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23",
+        "A24",
+        "A25"
+      ],
+      "reference_fold": "A17",
+      "tie_audit": {
+        "changes": [],
+        "files_changed_by_tie_correction": 0,
+        "files_checked": 80
+      }
+    },
+    "mlaad_xlsr": {
+      "backend": "xlsr_peft_adapter",
+      "corpus": "mlaad",
+      "estimable_folds": [
+        "FASTPITCH",
+        "GLOWTTS",
+        "JENNY",
+        "NEURALHMM",
+        "OVERFLOW",
+        "SPEEDYSPEECH",
+        "TACOTRON2",
+        "TORTOISE",
+        "VITS"
+      ],
+      "folds": {
+        "FASTPITCH": {
+          "balanced_auc": 0.9993740219092332,
+          "balanced_minus_hash": 1.956181533646628e-05,
+          "bonafide_items": 48,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.003012519561815337,
+            0.0028951486697965574
+          ],
+          "bootstrap_probability_positive": 0.5265375,
+          "bootstrap_se": 0.0007549938426249631,
+          "common_ids": 119,
+          "hash_auc": 0.9993544600938967,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 1.0,
+          "max_t_ci95": [
+            -0.003015514756824492,
+            0.0030546383874974245
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.0016040688575899844,
+            0.001564945226917058
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 71,
+          "status": "estimable",
+          "union_ids": 119
+        },
+        "GLOWTTS": {
+          "balanced_auc": 0.9994949494949495,
+          "balanced_minus_hash": 0.0013314967860422744,
+          "bonafide_items": 44,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.0013314967860422406,
+            0.010307621671258033
+          ],
+          "bootstrap_probability_positive": 0.8473325,
+          "bootstrap_se": 0.0017584944615472327,
+          "common_ids": 110,
+          "hash_auc": 0.9981634527089073,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.9689001554992225,
+          "max_t_ci95": [
+            -0.0057376540350565376,
+            0.008400647607141086
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.0003902662993572085,
+            0.005991735537190083
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 66,
+          "status": "estimable",
+          "union_ids": 110
+        },
+        "JENNY": {
+          "balanced_auc": 0.6644798896670654,
+          "balanced_minus_hash": -0.026454999879663377,
+          "bonafide_items": 461,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.09703895166737038,
+            0.07470989411893679
+          ],
+          "bootstrap_probability_positive": 0.19077,
+          "bootstrap_se": 0.030954267700532882,
+          "common_ids": 1152,
+          "hash_auc": 0.6909348895467288,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": true,
+          "max_t_adjusted_p": 0.9420052899735502,
+          "max_t_ci95": [
+            -0.15089121035211644,
+            0.09798121059278968
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.0795630108418011,
+            0.04072260538082322
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 691,
+          "status": "estimable",
+          "union_ids": 1152
+        },
+        "NEURALHMM": {
+          "balanced_auc": 1.0,
+          "balanced_minus_hash": 0.0002564102564102111,
+          "bonafide_items": 26,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            0.0,
+            0.002692307692307693
+          ],
+          "bootstrap_probability_positive": 0.77864,
+          "bootstrap_se": 0.00041428073828899705,
+          "common_ids": 66,
+          "hash_auc": 0.9997435897435898,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.9978050109749451,
+          "max_t_ci95": [
+            -0.0014089990384614428,
+            0.001921819551281865
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            0.0,
+            0.0014102564102564104
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 40,
+          "status": "estimable",
+          "union_ids": 66
+        },
+        "OVERFLOW": {
+          "balanced_auc": 0.9989203778677462,
+          "balanced_minus_hash": 0.007085020242914908,
+          "bonafide_items": 26,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.0022267206477732796,
+            0.03245614035087719
+          ],
+          "bootstrap_probability_positive": 0.96428,
+          "bootstrap_se": 0.005792266262161176,
+          "common_ids": 64,
+          "hash_auc": 0.9918353576248313,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.7657961710191449,
+          "max_t_ci95": [
+            -0.016199900294823058,
+            0.030369940780652874
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.0002699055330634278,
+            0.021727395411605937
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 38,
+          "status": "estimable",
+          "union_ids": 64
+        },
+        "SPEEDYSPEECH": {
+          "balanced_auc": 1.0,
+          "balanced_minus_hash": 0.00028828828828830755,
+          "bonafide_items": 25,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            0.0,
+            0.002666666666666667
+          ],
+          "bootstrap_probability_positive": 0.8090824999999999,
+          "bootstrap_se": 0.00042320951516988453,
+          "common_ids": 62,
+          "hash_auc": 0.9997117117117117,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.9912200438997805,
+          "max_t_ci95": [
+            -0.001413014705312086,
+            0.0019895912818887014
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            0.0,
+            0.0014414414414414415
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 37,
+          "status": "estimable",
+          "union_ids": 62
+        },
+        "TACOTRON2": {
+          "balanced_auc": 0.9985449735449735,
+          "balanced_minus_hash": 0.005555555555555536,
+          "bonafide_items": 18,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.005158730158730159,
+            0.030952380952380953
+          ],
+          "bootstrap_probability_positive": 0.9002075,
+          "bootstrap_se": 0.005628249706697423,
+          "common_ids": 46,
+          "hash_auc": 0.992989417989418,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.8855005724971375,
+          "max_t_ci95": [
+            -0.01707001814141375,
+            0.028181129252524823
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.0017195767195767198,
+            0.019841269841269837
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 28,
+          "status": "estimable",
+          "union_ids": 46
+        },
+        "TORTOISE": {
+          "balanced_auc": 0.8794444444444445,
+          "balanced_minus_hash": 0.10888888888888892,
+          "bonafide_items": 10,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.0638888888888889,
+            0.3172222222222222
+          ],
+          "bootstrap_probability_positive": 0.961095,
+          "bootstrap_se": 0.06596649748554638,
+          "common_ids": 22,
+          "hash_auc": 0.7705555555555555,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 0.5203823980880096,
+          "max_t_ci95": [
+            -0.1562965467562477,
+            0.37407432453402556
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.011666666666666667,
+            0.24777777777777782
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 12,
+          "status": "estimable",
+          "union_ids": 22
+        },
+        "VITS": {
+          "balanced_auc": 0.9996527777777777,
+          "balanced_minus_hash": 0.00017361111111102723,
+          "bonafide_items": 16,
+          "bonferroni_m9_excludes_zero": false,
+          "bonferroni_m9_percentile_ci95": [
+            -0.003472222222222222,
+            0.005555555555555555
+          ],
+          "bootstrap_probability_positive": 0.5667425,
+          "bootstrap_se": 0.000934787947817401,
+          "common_ids": 40,
+          "hash_auc": 0.9994791666666667,
+          "ids_exactly_aligned": true,
+          "is_reference_fold": false,
+          "max_t_adjusted_p": 1.0,
+          "max_t_ci95": [
+            -0.0035842380794132277,
+            0.003931460301635282
+          ],
+          "max_t_excludes_zero": false,
+          "n_cells": 30,
+          "ordinary_excludes_zero": false,
+          "ordinary_percentile_ci95": [
+            -0.0013888888888888887,
+            0.002430555555555555
+          ],
+          "seeds": [
+            7,
+            11,
+            17,
+            29,
+            31,
+            42,
+            47,
+            59,
+            71,
+            83,
+            99,
+            101,
+            123,
+            127,
+            2024
+          ],
+          "spoof_items": 24,
+          "status": "estimable",
+          "union_ids": 40
+        }
+      },
+      "global_max_t_p_any_effect_nonzero": 0.5203823980880096,
+      "max_t_critical": 4.020001754727697,
+      "max_t_estimable_family_size": 9,
+      "paired_seeds": [
+        7,
+        11,
+        17,
+        29,
+        31,
+        42,
+        47,
+        59,
+        71,
+        83,
+        99,
+        101,
+        123,
+        127,
+        2024
+      ],
+      "planned_bonferroni_family_size": 9,
+      "planned_folds": [
+        "FASTPITCH",
+        "GLOWTTS",
+        "JENNY",
+        "NEURALHMM",
+        "OVERFLOW",
+        "SPEEDYSPEECH",
+        "TACOTRON2",
+        "TORTOISE",
+        "VITS"
+      ],
+      "reference_fold": "JENNY",
+      "tie_audit": {
+        "changes": [
+          {
+            "block": "samp_source-balanced",
+            "difference": -1.5696073784043918e-06,
+            "fold": "JENNY",
+            "legacy": 0.4738738851863595,
+            "seed": 99,
+            "tie_correct": 0.4738723155789811
+          },
+          {
+            "block": "samp_source-balanced",
+            "difference": -1.5696073784043918e-06,
+            "fold": "JENNY",
+            "legacy": 0.5683077435010406,
+            "seed": 2024,
+            "tie_correct": 0.5683061738936622
+          }
+        ],
+        "files_changed_by_tie_correction": 2,
+        "files_checked": 270
+      }
+    }
+  },
+  "method": {
+    "auroc": "tie-correct Mann-Whitney; 0.5 credit for ties",
+    "bonferroni_ci": "percentile crossed bootstrap alpha=.05/9",
+    "bootstrap_replicates": 200000,
+    "item_draw": "class-stratified within fold; shared across seeds and arms",
+    "max_t_ci": "single-step centered bootstrap max-t; bootstrap-SD studentizer",
+    "ordinary_ci": "percentile crossed bootstrap",
+    "rng_seed": 20260712,
+    "seed_draw": "shared across folds and arms within family"
+  }
+}
