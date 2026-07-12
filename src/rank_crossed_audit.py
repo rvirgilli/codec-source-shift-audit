@@ -322,6 +322,7 @@ def main() -> int:
     result: dict[str, object] = {
         "method": {
             "replicates": args.reps,
+            "batch_size": args.batch,
             "rng_seed": args.seed,
             "seeds": seeds,
             "conditions": CONDITIONS,

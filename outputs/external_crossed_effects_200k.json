@@ -437,7 +437,7 @@
             -0.0013314967860422406,
             0.010307621671258033
           ],
-          "bootstrap_probability_positive": 0.8473325,
+          "bootstrap_probability_positive": 0.84733,
           "bootstrap_se": 0.0017584944615472327,
           "common_ids": 110,
           "hash_auc": 0.9981634527089073,
@@ -872,6 +872,7 @@
   },
   "method": {
     "auroc": "tie-correct Mann-Whitney; 0.5 credit for ties",
+    "batch_size": 2000,
     "bonferroni_ci": "percentile crossed bootstrap alpha=.05/9",
     "bootstrap_replicates": 200000,
     "item_draw": "class-stratified within fold; shared across seeds and arms",

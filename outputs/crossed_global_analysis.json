@@ -108,7 +108,7 @@
     },
     "SIMPLESPEECH2": {
       "budget_hash1000_minus_hash558": {
-        "bootstrap_probability_positive": 0.931995,
+        "bootstrap_probability_positive": 0.93199,
         "bootstrap_se": 0.07527595843090601,
         "ci95_bonferroni_percentile": [
           -0.07275985663082435,
@@ -142,7 +142,7 @@
         "point": 0.2082437275985663
       },
       "composition_minus_budget": {
-        "bootstrap_probability_positive": 0.965935,
+        "bootstrap_probability_positive": 0.96594,
         "bootstrap_se": 0.0613698567613134,
         "ci95_bonferroni_percentile": [
           -0.03440860215053762,

@@ -86,7 +86,7 @@ def run(name,cfg,reps,batch,base_seed):
 
 def main():
  ap=argparse.ArgumentParser(); ap.add_argument('--reps',type=int,default=200000); ap.add_argument('--batch',type=int,default=2000); ap.add_argument('--seed',type=int,default=20260712); ap.add_argument('--output',type=Path,default=ROOT/'outputs'/'external_crossed_effects_200k.json'); a=ap.parse_args()
- result=dict(method=dict(bootstrap_replicates=a.reps,rng_seed=a.seed,auroc='tie-correct Mann-Whitney; 0.5 credit for ties',seed_draw='shared across folds and arms within family',item_draw='class-stratified within fold; shared across seeds and arms',ordinary_ci='percentile crossed bootstrap',bonferroni_ci='percentile crossed bootstrap alpha=.05/9',max_t_ci='single-step centered bootstrap max-t; bootstrap-SD studentizer'),families={name:run(name,cfg,a.reps,a.batch,a.seed) for name,cfg in FAMILIES.items()})
+ result=dict(method=dict(bootstrap_replicates=a.reps,batch_size=a.batch,rng_seed=a.seed,auroc='tie-correct Mann-Whitney; 0.5 credit for ties',seed_draw='shared across folds and arms within family',item_draw='class-stratified within fold; shared across seeds and arms',ordinary_ci='percentile crossed bootstrap',bonferroni_ci='percentile crossed bootstrap alpha=.05/9',max_t_ci='single-step centered bootstrap max-t; bootstrap-SD studentizer'),families={name:run(name,cfg,a.reps,a.batch,a.seed) for name,cfg in FAMILIES.items()})
  a.output.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n'); print('wrote',a.output)
  for name,fam in result['families'].items():
   print(f'\n{name}: max-t critical={fam["max_t_critical"]:.6f}, global p={fam["global_max_t_p_any_effect_nonzero"]:.6g}')

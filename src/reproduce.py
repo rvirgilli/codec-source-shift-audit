@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Reproduce the paper's claim-bearing numbers from the bundled per-utterance scores.
+"""Legacy reproduction entrypoint retained for provenance of superseded drafts.
+
+This script does not generate the current WIFS submission's authoritative results.
+Use the commands in README.md for the submission analyses.
 
 Regenerates:
   - Sec. IV  : full-budget vs Matched Remaining-Data (MRD) source-holdout AUROCs,
@@ -112,7 +115,7 @@ def main() -> int:
     nm_full = np.mean([r["auroc_full"] for r in rows if r["fold"] != "MASKGCT" and r["auroc_full"]])
     nm_mrd = np.mean([r["auroc_mrd"] for r in rows if r["fold"] != "MASKGCT" and r["auroc_mrd"]])
 
-    print("== Source-holdout AUROC, full vs MRD (leak-free; paper Sec. IV) ==")
+    print("== Legacy source-holdout AUROC, full vs MRD ==")
     print(f"{'fold':14} {'full':>6} {'CI_full':>13} {'MRD':>6} {'CI_mrd':>13} {'delta':>6} {'rank_full':>11} {'rank_mrd':>11}")
     for r in rows:
         print(f"{r['fold']:14} {str(r['auroc_full']):>6} {str(r['ci_full']):>13} {str(r['auroc_mrd']):>6} "
@@ -125,11 +128,11 @@ def main() -> int:
     deltas_gated = [r["delta"] for r in rows
                     if r["fold"] != "MASKGCT" and r["delta"] is not None and r["auroc_full"] < 0.95]
     print(f"mean full->MRD collapse: below-ceiling-gated {np.mean(deltas_gated):.3f} "
-          f"({len(deltas_gated)} folds; paper Sec. IV)  |  all-non-MASKGCT {np.mean(deltas_all):.3f} "
+          f"({len(deltas_gated)} folds; legacy draft)  |  all-non-MASKGCT {np.mean(deltas_all):.3f} "
           f"({len(deltas_all)} folds)\n")
 
     # ---- Table IV: exact-codec proxy recovery ----
-    print("== Exact-codec proxy recovery (paper Sec. VII) ==")
+    print("== Legacy exact-codec proxy recovery ==")
     print(f"{'fold':14} {'codec':9} {'full':>6} {'MRD':>6} {'exact_proxy':>11} {'recovers':>8}")
     t4 = []
     for fold, anchor in EXACT.items():

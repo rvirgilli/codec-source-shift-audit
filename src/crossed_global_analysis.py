@@ -328,7 +328,8 @@ def main():
     output = ROOT / "outputs" / "crossed_global_analysis.json"
     output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     print(json.dumps(result, indent=2, sort_keys=True))
-    print(f"wrote {output}")
+    display_output = output.relative_to(ROOT) if output.is_relative_to(ROOT) else output
+    print(f"wrote {display_output}")
 
 
 if __name__ == "__main__":
